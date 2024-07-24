@@ -1,0 +1,14 @@
+.swiper-wrapper {
+  overflow: hidden;
+}
+.swiper-wrapper-inner {
+  height: 100%;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  position: relative;
+}
+.swiper-slide {
+  position: relative;
+  flex-shrink: 0;
+}
