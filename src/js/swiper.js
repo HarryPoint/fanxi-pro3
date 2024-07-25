@@ -93,7 +93,7 @@ class Swiper {
       this.moveTo(this.currentIndex - 1);
     }
   }
-  autoPlay(tick = 4000) {
+  autoPlay(tick = 5000) {
     this.autoPlayFlag = true;
     this.timer = setInterval(() => {
       this.next();
