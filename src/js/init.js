@@ -28,9 +28,11 @@ function initMobileMenu() {
   const mobileMenu = document.querySelector("#mobileMenu");
   const mobileMenuClose = document.querySelector("#mobileMenuClose");
   const mobileMenuContent = document.querySelector("#mobileMenuContent");
+  const body = document.body;
   handleBar.addEventListener("click", () => {
     mobileMenu.classList.toggle("active");
     mobileMenu.classList.add("in");
+    body.classList.add("overflow-hidden");
     mobileMenuContent.addEventListener(
       "animationend",
       () => {
@@ -46,6 +48,7 @@ function initMobileMenu() {
       () => {
         mobileMenu.classList.toggle("active");
         mobileMenu.classList.remove("out");
+        body.classList.remove("overflow-hidden");
       },
       { once: true },
     );
