@@ -55,14 +55,15 @@ function initMobileMenu() {
 const newsTemplate = `
     <a class="block" href="./detail.html?id={{id}}">
         <img
-            class="aspect-[2/3] w-full object-cover"
+            class="scrollShow aspect-[2/3] w-full object-cover"
+            data-effect="fadeIn"
             src="{{img}}"
             alt=""
         />
-        <h6 class="py-4 text-base lg:text-xl">
+        <h6 class="scrollShow py-4 text-base lg:text-xl" data-effect="fadeIn">
         {{title}}
         </h6>
-        <p class="pb-6 text-sm leading-6">{{content}}</p>
+        <p class="scrollShow pb-6 text-sm leading-6" data-effect="fadeIn">{{content}}</p>
     </a>
     `;
 
