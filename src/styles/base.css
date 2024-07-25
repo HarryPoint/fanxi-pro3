@@ -5,6 +5,10 @@
   -webkit-text-stroke: 2px #0000008f;
 }
 
+.wapper {
+  max-width: 1920px;
+}
+
 @keyframes menuAni {
   0% {
     transform: translateX(100%);
@@ -14,14 +18,13 @@
   }
 }
 
-#mobileMenu {
-  overflow: hidden;
+/* #mobileMenu {
   height: 0;
 }
 
 #mobileMenu.active {
   height: 100vh;
-}
+} */
 
 #mobileMenu.out #mobileMenuContent {
   animation: menuAni 0.3s 0s forwards reverse;

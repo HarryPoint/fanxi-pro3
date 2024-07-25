@@ -30,7 +30,7 @@ function initMobileMenu() {
   const mobileMenuContent = document.querySelector("#mobileMenuContent");
   const body = document.body;
   handleBar.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active");
+    mobileMenu.classList.toggle("h-screen");
     mobileMenu.classList.add("in");
     body.classList.add("overflow-hidden");
     mobileMenuContent.addEventListener(
@@ -46,7 +46,7 @@ function initMobileMenu() {
     mobileMenuContent.addEventListener(
       "animationend",
       () => {
-        mobileMenu.classList.toggle("active");
+        mobileMenu.classList.toggle("h-screen");
         mobileMenu.classList.remove("out");
         body.classList.remove("overflow-hidden");
       },
