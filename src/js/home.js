@@ -1,4 +1,5 @@
 const api = new Api();
+new ScrollShow().init(".scrollShow");
 var sw;
 function initSwiper() {
   sw = new Swiper("#swiper", {
