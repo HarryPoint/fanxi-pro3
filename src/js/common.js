@@ -1,26 +1,23 @@
-function ready(fn) {
-  if (document.readyState !== "loading") {
+const readyCallStack = [];
+
+function readyCall() {
+  readyCallStack.forEach((fn) => {
     fn();
+  });
+}
+
+function readyInit() {
+  if (document.readyState !== "loading") {
+    readyCall();
   } else {
-    document.addEventListener("DOMContentLoaded", fn);
+    document.addEventListener("DOMContentLoaded", readyCall);
   }
 }
 
-var sw;
-function initSwiper() {
-  sw = new Swiper("#swiper", {
-    pagination: {
-      class: [
-        "aspect-square",
-        "w-3",
-        "rounded-full",
-        "border-2",
-        "border-gray-600",
-      ],
-      activeClass: ["w-4", "border-white"],
-    },
-  });
-  sw.autoPlay();
+readyInit();
+
+function ready(fn) {
+  readyCallStack.push(fn);
 }
 
 function initMobileMenu() {
@@ -54,7 +51,34 @@ function initMobileMenu() {
     );
   });
 }
-ready(() => {
-  initSwiper();
-  initMobileMenu();
-});
+
+const newsTemplate = `
+    <a class="block" href="./detail.html?id={{id}}">
+        <img
+            class="aspect-[2/3] w-full object-cover"
+            src="{{img}}"
+            alt=""
+        />
+        <h6 class="py-4 text-base lg:text-xl">
+        {{title}}
+        </h6>
+        <p class="pb-6 text-sm leading-6">{{content}}</p>
+    </a>
+    `;
+
+class Api {
+  constructor(baseURL = "https://apifoxmock.com/m1/4090542-3728567-default") {
+    this.axios = axios.create({
+      baseURL,
+    });
+  }
+  async getNews({ pageSize, page }) {
+    return this.axios({
+      url: "/news",
+      params: {
+        pageSize,
+        page,
+      },
+    });
+  }
+}
