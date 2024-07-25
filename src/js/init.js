@@ -5,8 +5,9 @@ function ready(fn) {
     document.addEventListener("DOMContentLoaded", fn);
   }
 }
+
 var sw;
-ready(() => {
+function initSwiper() {
   sw = new Swiper("#swiper", {
     pagination: {
       class: [
@@ -20,4 +21,37 @@ ready(() => {
     },
   });
   sw.autoPlay();
+}
+
+function initMobileMenu() {
+  const handleBar = document.querySelector("#mobileHandleBar");
+  const mobileMenu = document.querySelector("#mobileMenu");
+  const mobileMenuClose = document.querySelector("#mobileMenuClose");
+  const mobileMenuContent = document.querySelector("#mobileMenuContent");
+  handleBar.addEventListener("click", () => {
+    mobileMenu.classList.toggle("active");
+    mobileMenu.classList.add("in");
+    mobileMenuContent.addEventListener(
+      "animationend",
+      () => {
+        mobileMenu.classList.remove("in");
+      },
+      { once: true },
+    );
+  });
+  mobileMenuClose.addEventListener("click", () => {
+    mobileMenu.classList.add("out");
+    mobileMenuContent.addEventListener(
+      "animationend",
+      () => {
+        mobileMenu.classList.toggle("active");
+        mobileMenu.classList.remove("out");
+      },
+      { once: true },
+    );
+  });
+}
+ready(() => {
+  initSwiper();
+  initMobileMenu();
 });

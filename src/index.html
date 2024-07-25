@@ -6,15 +6,8 @@
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
     <title>Document</title>
+    <link rel="stylesheet" href="./styles/base.css" />
     <link rel="stylesheet" href="./styles/swiper.css" />
-    <style>
-      .text-stroke {
-        -webkit-text-stroke: 2px #f6f6f6;
-      }
-      .text-stroke-dark {
-        -webkit-text-stroke: 2px #0000008f;
-      }
-    </style>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body>
@@ -22,31 +15,32 @@
       <!-- header -->
       <section class="sticky top-0 z-50">
         <!-- top bar -->
-        <div
-          class="container flex h-14 items-center justify-between bg-black/90 px-4"
-        >
+        <div class="flex h-14 items-center justify-between bg-black/90 px-4">
           <a href="/">
             <img class="w-6" src="./assets/logo.png" alt="" />
           </a>
-          <a class="">
+          <a id="mobileHandleBar" class="">
             <img class="w-6" src="./assets/Vector.png" alt="" />
           </a>
         </div>
         <!-- 展开项 -->
-        <!-- <div
-          class="absolute right-0 top-0 h-screen w-7/12 bg-neutral-800 text-white"
-        >
+        <div id="mobileMenu" class="absolute left-0 top-0 h-screen w-screen">
           <div
-            class="flex flex-col divide-y divide-neutral-600 px-5 *:px-3 *:py-10"
+            id="mobileMenuContent"
+            class="absolute right-0 top-0 h-screen w-2/3 bg-neutral-800 text-white"
           >
-            <a href="/">首页</a>
-            <a href="/news">新闻列表页</a>
-            <a href="/about">关于我们</a>
+            <div
+              class="flex flex-col divide-y divide-neutral-600 px-5 *:px-3 *:py-10"
+            >
+              <a href="/">首页</a>
+              <a href="/news">新闻列表页</a>
+              <a href="/about">关于我们</a>
+            </div>
+            <div id="mobileMenuClose" class="absolute right-0 top-0 h-14 p-4">
+              <img class="w-6" src="./assets/close_icon.png" alt="" />
+            </div>
           </div>
-          <div class="absolute right-0 top-0 h-14 p-4">
-            <img class="w-6" src="./assets/close_icon.png" alt="" />
-          </div>
-        </div> -->
+        </div>
       </section>
       <!-- banner -->
       <section class="relative mx-auto" id="swiper">
@@ -122,7 +116,11 @@
         </div>
         <div class="pt-5">
           <div class="relative aspect-[3/4] overflow-hidden">
-            <img src="./assets/team1.png" alt="" />
+            <img
+              class="h-full w-full object-cover"
+              src="./assets/team1.png"
+              alt=""
+            />
             <div
               class="absolute bottom-10 left-1/2 -translate-x-1/2 text-center text-white"
             >
@@ -135,7 +133,11 @@
             </div>
           </div>
           <div class="relative aspect-[3/4] overflow-hidden">
-            <img src="./assets/team2.png" alt="" />
+            <img
+              class="h-full w-full object-cover"
+              src="./assets/team2.png"
+              alt=""
+            />
             <div
               class="absolute bottom-10 left-1/2 -translate-x-1/2 text-center text-white"
             >
@@ -148,7 +150,11 @@
             </div>
           </div>
           <div class="relative aspect-[3/4] overflow-hidden">
-            <img src="./assets/team3.png" alt="" />
+            <img
+              class="h-full w-full object-cover"
+              src="./assets/team3.png"
+              alt=""
+            />
             <div
               class="absolute bottom-10 left-1/2 -translate-x-1/2 text-center text-white"
             >
@@ -173,15 +179,32 @@
           <div class="-mt-6 translate-x-0 text-4xl text-white">新闻动态</div>
           <div class="mx-auto mt-3 h-1 w-16 bg-red-600"></div>
         </div>
-        <div class="container px-5 text-white">
-          <div class="grid grid-cols-2 gap-3">
+        <div class="container mx-auto px-5 text-white">
+          <div class="grid grid-cols-2 gap-3 md:grid-cols-3">
             <a class="block">
-              <img src="https://picsum.photos/id/237/200/300" alt="" />
+              <img
+                class="aspect-[2/3] w-full object-cover"
+                src="https://picsum.photos/id/237/200/300"
+                alt=""
+              />
               <h6 class="text-lg">这是标题</h6>
               <p class="text-sm">这是内容</p>
             </a>
             <a class="block">
-              <img src="https://picsum.photos/id/237/200/300" alt="" />
+              <img
+                class="aspect-[2/3] w-full object-cover"
+                src="https://picsum.photos/id/237/200/300"
+                alt=""
+              />
+              <h6 class="text-lg">这是标题</h6>
+              <p class="text-sm">这是内容</p>
+            </a>
+            <a class="block">
+              <img
+                class="aspect-[2/3] w-full object-cover"
+                src="https://picsum.photos/id/237/200/300"
+                alt=""
+              />
               <h6 class="text-lg">这是标题</h6>
               <p class="text-sm">这是内容</p>
             </a>
@@ -190,7 +213,7 @@
       </section>
       <!-- 页脚 -->
       <section class="bg-orange-600">
-        <div class="container p-6 text-xs text-white">
+        <div class="container mx-auto p-6 text-xs text-white">
           <ul class="leading-6">
             <li>地址：中国山东省青岛市南区某某20号</li>
             <li>邮箱：1223xxx@qq.com</li>
