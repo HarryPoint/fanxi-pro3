@@ -1,0 +1,294 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/base.css" />
+    <link rel="stylesheet" href="./styles/swiper.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="wapper relative mx-auto">
+      <!-- header -->
+      <section
+        class="sticky top-0 z-50 bg-gray-950 text-white lg:bg-opacity-55"
+      >
+        <!-- top bar -->
+        <div
+          class="mx-auto flex h-14 items-center justify-between px-4 lg:container lg:h-24"
+        >
+          <a class="inline-flex items-center gap-2" href="./index.html">
+            <img class="w-6 lg:w-9" src="./assets/logo.png" alt="" />
+            <span class="lg:text-2xl">企业站</span>
+          </a>
+          <a id="mobileHandleBar" class="lg:hidden">
+            <img class="w-6" src="./assets/Vector.png" alt="" />
+          </a>
+          <!-- 展开项 -->
+          <div
+            id="mobileMenu"
+            class="absolute left-0 top-0 w-screen overflow-hidden lg:static lg:h-auto lg:w-auto"
+          >
+            <div
+              id="mobileMenuContent"
+              class="absolute right-0 top-0 h-screen w-2/3 bg-neutral-800 text-white lg:static lg:h-auto lg:w-auto lg:bg-transparent lg:text-sm"
+            >
+              <div
+                class="flex flex-col divide-y divide-neutral-600 px-5 lg:flex-row lg:divide-y-0 lg:text-lg"
+              >
+                <a
+                  class="px-3 py-10 transition hover:text-red-600 lg:py-0"
+                  href="./index.html"
+                >
+                  首页
+                </a>
+                <a
+                  class="px-3 py-10 transition hover:text-red-600 lg:py-0"
+                  href="./news.html"
+                >
+                  新闻列表页
+                </a>
+                <a
+                  class="px-3 py-10 transition hover:text-red-600 lg:py-0"
+                  href="./about.html"
+                >
+                  关于我们
+                </a>
+              </div>
+              <div
+                id="mobileMenuClose"
+                class="absolute right-0 top-0 h-14 p-4 lg:hidden"
+              >
+                <img class="w-6" src="./assets/close_icon.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- banner -->
+      <section class="relative mx-auto lg:-mt-24" id="swiper">
+        <!-- banner图片 -->
+        <div
+          class="swiper-wrapper relative aspect-[7/5] lg:aspect-[12/5]"
+          id="banner"
+        >
+          <div class="swiper-slide">
+            <img
+              class="absolute left-0 top-0 h-full w-full object-cover"
+              src="./assets/banner1.png"
+              alt="banner"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img
+              class="absolute left-0 top-0 h-full w-full object-cover"
+              src="./assets/banner2.png"
+              alt="banner"
+            />
+          </div>
+        </div>
+        <!-- 控制器 -->
+        <div
+          class="swiper-pagination absolute left-4 top-0 flex h-full flex-col items-center justify-center gap-3"
+          id="control"
+        ></div>
+      </section>
+      <!-- service scope -->
+      <section class="py-3 lg:py-10">
+        <!-- content -->
+        <div class="container mx-auto px-5 lg:flex lg:flex-col lg:items-start">
+          <!-- title -->
+          <div class="relative">
+            <div
+              class="text-stroke text-4xl text-transparent lg:-ml-12 lg:text-8xl"
+            >
+              Service scope
+            </div>
+            <div class="-mt-4 ml-3 text-4xl">服务范围</div>
+          </div>
+          <!-- 正文内容 -->
+          <div class="lg:mt-9 lg:w-5/12">
+            <p class="mt-3 break-all text-sm text-gray-400 lg:text-xl">
+              依托百度政务混合云，汇聚城市管理及公安等政务领域的自有数据及互联网公开数据，基于百度大数据多年积累的行业模型及实战经验，提供从数据整合治理到分析挖掘的一站式大数据解决方案，助力智慧政务新时代。<br /><br />
+              全渠道零售方案包括B2C、O2O、B2B的场景，提供APP/小程序，支持对接饿了么、美团等第三方外卖平台，基于阿里巴巴多年沉淀的业务中台技术，建立商品、会员、交易、营销等共享服务中心，实现全渠道数据的共享和一致，帮助零售商打造线上、线下无差别的全渠道销售能力。
+            </p>
+          </div>
+        </div>
+        <div class="relative lg:-mt-96 lg:flex lg:flex-col lg:items-end">
+          <div class="flex items-end justify-end *:p-1 lg:w-4/6 lg:*:p-4">
+            <div class="w-3/12">
+              <img class="w-full" src="./assets/Rectangle3.png" alt="" />
+            </div>
+            <div class="w-3/5">
+              <img class="w-full" src="./assets/Rectangle2.png" alt="" />
+            </div>
+          </div>
+          <div class="flex items-start justify-end *:p-1 lg:w-9/12 lg:*:p-4">
+            <div class="w-3/5">
+              <img class="w-full" src="./assets/Rectangle1.png" alt="" />
+            </div>
+            <div class="w-2/6">
+              <img class="w-full" src="./assets/Rectangle4.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 企业文化 -->
+      <section class="relative hidden py-20 text-white lg:block">
+        <img
+          class="absolute left-0 top-0 h-full w-full object-cover"
+          src="./assets/Rectangle22.png"
+        />
+        <div
+          class="absolute left-0 top-0 h-full w-full bg-black opacity-70"
+        ></div>
+        <div class="container relative mx-auto">
+          <div class="relative mx-auto text-center">
+            <div class="-mt-6 translate-x-0 text-4xl">企业文化</div>
+            <div class="mx-auto mt-3 h-1 w-16 bg-red-600"></div>
+          </div>
+          <div class="mt-8 text-xl leading-10 *:indent-10">
+            <p>
+              作为中国专业的企业文化咨询公司，我们在生存和发展的历程中，也形成了自己经营管理个性和文化，我们的运营和发展都基于对这些文化
+              涵盖的信念，信条和原则特之以恒、不折不扣地执行，所有公司的成员的所有行为均需与这些标准和原则保持高度统一。
+            </p>
+            <p>
+              我们相信，企业的战略可以改变，领号可以更换，甚至文化的表现也业与时俱进，总之一切都可以调整，唯一能保特并引领我们的，只有我
+              们的文化核心。只有信念的坚持才能带来企业的持续增长，只有统一的意志才能報炼出优秀的队伍，总之只有文化才能使我们长青。
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- team to introduce -->
+      <section>
+        <div class="container relative mx-auto text-center">
+          <div
+            class="text-stroke -translate-x-3 text-4xl text-transparent lg:text-9xl"
+          >
+            Team to introduce
+          </div>
+          <div class="-mt-6 translate-x-0 text-4xl">团队介绍</div>
+          <div class="mx-auto mt-3 h-1 w-16 bg-red-600"></div>
+        </div>
+        <div class="pt-5 lg:grid lg:grid-cols-3">
+          <div class="relative aspect-[3/4] overflow-hidden">
+            <img
+              class="h-full w-full object-cover"
+              src="./assets/team1.png"
+              alt=""
+            />
+            <div
+              class="absolute bottom-10 left-1/2 -translate-x-1/2 text-center text-white lg:bottom-40"
+            >
+              <div>Jon Smith</div>
+              <div class="whitespace-nowrap">特级教师，从事教育工作10年</div>
+              <div>
+                <span class="text-red-500">→</span>
+                <span>More information</span>
+              </div>
+            </div>
+          </div>
+          <div class="relative aspect-[3/4] overflow-hidden">
+            <img
+              class="h-full w-full object-cover"
+              src="./assets/team2.png"
+              alt=""
+            />
+            <div
+              class="absolute bottom-10 left-1/2 -translate-x-1/2 text-center text-white lg:bottom-40"
+            >
+              <div>Merri Bond</div>
+              <div class="whitespace-nowrap">特级教师，从事教育工作10年</div>
+              <div>
+                <span class="text-red-500">→</span>
+                <span>More information</span>
+              </div>
+            </div>
+          </div>
+          <div class="relative aspect-[3/4] overflow-hidden">
+            <img
+              class="h-full w-full object-cover"
+              src="./assets/team3.png"
+              alt=""
+            />
+            <div
+              class="absolute bottom-10 left-1/2 -translate-x-1/2 text-center text-white lg:bottom-40"
+            >
+              <div>Samuel Fredman</div>
+              <div class="whitespace-nowrap">特级教师，从事教育工作10年</div>
+              <div>
+                <span class="text-red-500">→</span>
+                <span>More information</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 新闻动态 -->
+      <section class="bg-slate-800 pb-5 lg:pt-10">
+        <div class="container relative mx-auto py-5 text-center">
+          <div
+            class="text-stroke-dark -translate-x-3 text-4xl text-transparent lg:text-8xl"
+          >
+            News and trends
+          </div>
+          <div class="-mt-6 translate-x-0 text-4xl text-white">新闻动态</div>
+          <div class="mx-auto mt-3 h-1 w-16 bg-red-600"></div>
+        </div>
+        <div class="container mx-auto px-5 text-white">
+          <div
+            id="newsList"
+            class="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 lg:gap-16"
+          >
+            <!-- <a class="block">
+              <img
+                class="aspect-[2/3] w-full object-cover"
+                src="https://picsum.photos/id/237/200/300"
+                alt=""
+              />
+              <h6 class="py-4 text-base lg:text-xl">
+                2022百度Al大会前夕，解读百度大脑的 半年”豹变"
+              </h6>
+              <p class="pb-6 text-sm leading-6">
+                Facebook为未来的VR社交打造了一款逼真的虚拟头像
+                系统，该系统的特点是，利用数百颗摄像头对人脸进行
+                动作捕捉，并能生成与人脸相似度很高的虚拟头像，这
+                些头像还能模仿人脸的大量表情。
+              </p>
+            </a> -->
+          </div>
+        </div>
+      </section>
+      <!-- 页脚 -->
+      <section class="bg-red-500">
+        <div
+          class="container mx-auto p-6 text-xs text-white lg:py-12 lg:text-base"
+        >
+          <ul class="leading-6 lg:flex lg:justify-around lg:px-12">
+            <li>地址：中国山东省青岛市南区某某20号</li>
+            <li>邮箱：1223xxx@qq.com</li>
+            <li>电话：0591-888988998</li>
+          </ul>
+          <div class="mt-4 flex items-center gap-2 lg:mt-12 lg:justify-center">
+            <img
+              class="aspect-square w-10 lg:w-12"
+              src="./assets/qrcode.png"
+              alt=""
+            />
+            <div class="leading-4 lg:flex lg:gap-4">
+              <p>Copyright & 2009 - 2022 Cld, All Rights Reserved</p>
+              <p>某菜网络科技有限公司 版权所有 陕ICP备xxxx×xxx号</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="./js/swiper.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/home.js"></script>
+  </body>
+</html>
