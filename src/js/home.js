@@ -1,5 +1,5 @@
 const api = new Api();
-new ScrollShow().init(".scrollShow");
+
 var sw;
 function initSwiper() {
   sw = new Swiper("#swiper", {
@@ -35,8 +35,11 @@ async function initNews() {
   eNewsList.innerHTML = result.join("");
 }
 
-ready(() => {
+ready(async () => {
   initSwiper();
   initMobileMenu();
-  initNews();
+  await initNews();
+  // 防止数据加载导致动画失效
+  const scrollShow = new ScrollShow();
+  scrollShow.init(".scrollShow");
 });

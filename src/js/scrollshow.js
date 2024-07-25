@@ -52,6 +52,14 @@ class ScrollShow {
           opacity: 1,
         },
       ],
+      fadeIn: [
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+        },
+      ],
       ...effectMap,
     };
 
@@ -67,13 +75,13 @@ class ScrollShow {
         }
       }
     });
-    this.init();
   }
-  init(target = ".scroll") {
+  init(target = ".scrollShow") {
     const els = document.querySelectorAll(target);
     for (let el of els) {
       this.effectBind(el);
     }
+    return this;
   }
   isBelowViewPort(el) {
     return el.getBoundingClientRect().top > window.innerHeight;
