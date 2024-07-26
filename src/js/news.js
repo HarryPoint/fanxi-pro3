@@ -29,7 +29,7 @@ async function initNewsList(callBack) {
   });
   async function update({ page, pageSize } = {}) {
     page = page || getQueryParam("page") || 1;
-    pageSize = pageSize || getQueryParam("pageSize") || 10;
+    pageSize = pageSize || getQueryParam("pageSize") || 20;
     const {
       data: { data, links },
     } = await api.getNews({
