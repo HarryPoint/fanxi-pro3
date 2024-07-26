@@ -20,6 +20,17 @@ function ready(fn) {
   readyCallStack.push(fn);
 }
 
+function updateQueryParam(key, value) {
+  const url = new URL(window.location);
+  url.searchParams.set(key, value);
+  window.history.pushState({}, "", url);
+}
+
+function getQueryParam(key) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(key);
+}
+
 function initMobileMenu() {
   const handleBar = document.querySelector("#mobileHandleBar");
   const mobileMenu = document.querySelector("#mobileMenu");
