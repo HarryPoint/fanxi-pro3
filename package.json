@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pub": "gh-pages -d src/"
+    "pub": "gh-pages -d src/",
+    "build": "gulp"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "gh-pages": "^6.1.1",
+    "gulp": "^4.0.2",
+    "gulp-sharp-responsive": "^0.4.1",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "tailwindcss": "^3.4.6"

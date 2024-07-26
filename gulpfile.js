@@ -1,45 +1,21 @@
-var gulp = require("gulp");
-var responsive = require("gulp-responsive");
-gulp.task("default", function () {
-  return gulp
-    .src("origin/*.{png, jpg}")
-    .pipe(
-      responsive(
-        {
-          "*": [
-            {
-              width: 90,
-              quality: 50,
-              rename: {
-                suffix: "-90",
-              },
-            },
-            {
-              width: 180,
-              quality: 75,
-              rename: {
-                suffix: "-180",
-              },
-            },
-            {
-              width: 360,
-              rename: {
-                suffix: "-360",
-              },
-            },
-            {
-              rename: {
-                suffix: "-original",
-              },
-            },
-          ],
+const { src, dest } =require("gulp");
+const sharpResponsive =require("gulp-sharp-responsive");
+
+const img = () => {
+  console.log('----')
+  return src("origin/*.{jpg,png}")
+  .pipe(sharpResponsive({
+    formats: [
+      { 
+        width: (metadata) => {
+          return Math.floor(metadata.width * 0.5)
         },
-        {
-          errorOnEnlargement: false,
-          skipOnEnlargement: true,
-          withoutEnlargement: true,
-        },
-      ),
-    )
-    .pipe(gulp.dest("dist/images"));
-});
+        rename: { suffix: "-2x" }
+      }, {
+        rename: {suffix: '-1x'}
+      }
+    ]
+  }))
+  .pipe(dest("src/assets"))
+};
+exports.default = img;
