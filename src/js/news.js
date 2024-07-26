@@ -7,7 +7,7 @@ function renderData(data) {
       .replace("{{id}}", news.id)
       .replace("{{img}}", news.img)
       .replace("{{title}}", news.title)
-      .replace("{{content}}", news.content);
+      .replace("{{summary}}", news.summary);
   });
   eNewsList.innerHTML = result.join("");
 }
