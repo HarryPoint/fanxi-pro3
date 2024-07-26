@@ -77,7 +77,7 @@ const newsTemplate = `
         <h6 class="scrollShow py-4 text-base lg:text-xl" data-effect="fadeIn">
         {{title}}
         </h6>
-        <p class="scrollShow pb-6 text-sm leading-6" data-effect="fadeIn">{{content}}</p>
+        <p class="scrollShow pb-6 text-sm leading-6" data-effect="fadeIn">{{summary}}</p>
     </a>
     `;
 
@@ -94,6 +94,11 @@ class Api {
         pageSize,
         page,
       },
+    });
+  }
+  async getNewsDetail({ id }) {
+    return this.axios({
+      url: `/news/${id}`,
     });
   }
 }
