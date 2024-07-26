@@ -70,7 +70,7 @@ const newsTemplate = `
               class="scrollShow aspect-[2/3] w-full object-cover transition hover:scale-105"
               data-effect="blurIn"
               data-always="true"
-              src="{{img}}"
+              src="{{thumb}}"
               alt=""
           />
         </div>
