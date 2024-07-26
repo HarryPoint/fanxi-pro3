@@ -49,7 +49,6 @@ async function initNewsList(callBack) {
 
 ready(async () => {
   initMobileMenu();
-  // 防止数据加载导致动画失效
   const scrollShow = new ScrollShow();
   scrollShow.init(".scrollShow");
   initNewsList(() => {

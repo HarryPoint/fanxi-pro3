@@ -49,12 +49,6 @@ class Pagination {
         return Reflect.get(target, propKey, receiver);
       },
       set: (target, propKey, value, receiver) => {
-        console.log(
-          "target[propKey]",
-          propKey,
-          target[propKey],
-          target[propKey] === value,
-        );
         const updateFlag = target[propKey] !== value;
         const result = Reflect.set(target, propKey, value, receiver);
         if (updateFlag) {
