@@ -16,19 +16,42 @@ function renderPagination(links) {
   console.log("links: ", links);
 }
 
-async function initNewsList() {
-  const {
-    data: { data, links },
-  } = await api.getNews({
-    page: 1,
-    pageSize: 20,
+async function initNewsList(callBack) {
+  const paginationIns = new Pagination();
+  paginationIns.mount("#pagination-wrapper");
+  paginationIns.onCurrentChange(({ current }) => {
+    updateQueryParam("page", current);
+    update();
   });
-  renderData(data);
-  renderPagination(links);
-  console.log("links: ", links);
+  paginationIns.onPageSizeChange(({ pageSize }) => {
+    updateQueryParam("pageSize", pageSize);
+    update();
+  });
+  async function update({ page, pageSize } = {}) {
+    page = page || getQueryParam("page") || 1;
+    pageSize = pageSize || getQueryParam("pageSize") || 10;
+    const {
+      data: { data, links },
+    } = await api.getNews({
+      page,
+      pageSize,
+    });
+    renderData(data);
+    callBack();
+    paginationIns.update({
+      current: links.current,
+      pageSize: links.pageSize,
+      total: links.total,
+    });
+  }
+  await update();
 }
 
-ready(() => {
+ready(async () => {
   initMobileMenu();
-  initNewsList();
+  const scrollShow = new ScrollShow();
+  scrollShow.init(".scrollShow");
+  initNewsList(() => {
+    scrollShow.init(".scrollShow");
+  });
 });

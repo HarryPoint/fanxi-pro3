@@ -101,27 +101,39 @@
               </p>
             </a>
           </div>
-          <div
-            id="pagenation"
-            class="flex items-center justify-center gap-5 text-gray-500"
-          >
-            <select class="h-8 border">
-              <option value="10">10条/页</option>
-              <option value="20">20条/页</option>
-              <option value="30">30条/页</option>
-            </select>
-            <div class="flex gap-5">
-              <button>&lt;</button>
-              <button class="text-red-600">1</button>
-              <button>2</button>
-              <button>3</button>
-              <button>&gt;</button>
-            </div>
-            <div>
-              前往
-              <input class="h-8 w-11 border px-3" type="text" />
-              页
-            </div>
+          <div id="pagination-wrapper">
+            <!-- <div
+              data-role="pagination"
+              class="flex items-center justify-center gap-5 text-gray-500"
+            >
+              <select data-role="pageSize" class="h-8 border">
+                <option value="10">10条/页</option>
+                <option value="20">20条/页</option>
+                <option value="30">30条/页</option>
+              </select>
+              <div class="flex gap-5">
+                <button data-role="prevBtn" class="hover:text-red-400">
+                  &lt;
+                </button>
+                <div data-role="pages" class="flex gap-5">
+                  <button data-value="1" class="hover:text-red-400">1</button>
+                  <button data-value="2" class="hover:text-red-400">2</button>
+                  <button data-value="3" class="hover:text-red-400">3</button>
+                </div>
+                <button data-role="nextBtn" class="hover:text-red-400">
+                  &gt;
+                </button>
+              </div>
+              <div>
+                前往
+                <input
+                  data-role="pageInput"
+                  class="h-8 w-11 border px-3"
+                  type="text"
+                />
+                页
+              </div>
+            </div> -->
           </div>
         </div>
       </section>
@@ -150,7 +162,9 @@
       </section>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="./js/scrollshow.js"></script>
     <script src="./js/common.js"></script>
+    <script src="./js/pagination.js"></script>
     <script src="./js/news.js"></script>
   </body>
 </html>

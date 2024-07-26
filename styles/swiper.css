@@ -9,6 +9,5 @@
   position: relative;
 }
 .swiper-slide {
-  position: relative;
   flex-shrink: 0;
 }

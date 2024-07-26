@@ -60,6 +60,14 @@ class ScrollShow {
           opacity: 1,
         },
       ],
+      blurIn: [
+        {
+          filter: "blur(50px)",
+        },
+        {
+          filter: "blur(0px)",
+        },
+      ],
       ...effectMap,
     };
 
@@ -84,10 +92,18 @@ class ScrollShow {
     return this;
   }
   isBelowViewPort(el) {
+    if (el.dataset.always) {
+      // 如果设置总是显示，则不排除视口上方的元素
+      return true;
+    }
     return el.getBoundingClientRect().top > window.innerHeight;
   }
   // 应用效果
   effectBind(el) {
+    // 排除已经绑定的元素
+    if (this.animationMap.has(el)) {
+      return;
+    }
     // 排除视口上方的元素
     if (!this.isBelowViewPort(el)) {
       return;
