@@ -3,23 +3,20 @@ class Pagination {
     this.template = `
         <div
             data-role="pagination"
-            class="flex items-center justify-center gap-5 text-gray-500"
+            class="flex items-center justify-center gap-5 text-gray-500 text-xs"
         >
-            <select data-role="pageSize" class="h-8 border">
+            <select data-role="pageSize" class="h-6 lg:h-8 border">
                 <option value="10">10条/页</option>
                 <option value="20">20条/页</option>
                 <option value="30">30条/页</option>
             </select>
-            <div class="flex gap-5">
-            <button data-role="prevBtn" class="hover:text-red-400">
+            <div class="flex gap-3 lg:gap-5">
+            <button data-role="prevBtn" class="enabled:hover:text-red-400 disabled:text-gray-300 disabled:cursor-not-allowed">
                 &lt;
             </button>
-            <div data-role="pages" class="flex gap-5">
-                <button data-value="1" class="hover:text-red-400">1</button>
-                <button data-value="2" class="hover:text-red-400">2</button>
-                <button data-value="3" class="hover:text-red-400">3</button>
+            <div data-role="pages" class="flex gap-3 lg:gap-5">
             </div>
-            <button data-role="nextBtn" class="hover:text-red-400">
+            <button data-role="nextBtn" class="enabled:hover:text-red-400 disabled:text-gray-300 disabled:cursor-not-allowed">
                 &gt;
             </button>
             </div>
@@ -27,7 +24,7 @@ class Pagination {
             前往
             <input
                 data-role="pageInput"
-                class="h-8 w-11 border px-3"
+                class="h-6 lg:h-8 w-11 border px-3"
                 type="text"
             />
             页
@@ -107,13 +104,28 @@ class Pagination {
     for (let i = start; i <= end; i++) {
       pages.push(i);
     }
+    if (start > 1) {
+      pages.unshift(1, null);
+    }
+    if (end < total) {
+      pages.push(null, total);
+    }
     this.$pages.innerHTML = pages
       .map((page) => {
+        if (page === null) {
+          return `<button>...</button>`;
+        }
         return `<button data-value="${page}" class="${current === page ? "text-red-600 " : ""}hover:text-red-400">${
           page
         }</button>`;
       })
       .join("");
+    if (current === total) {
+      this.$nextBtn.disabled = true;
+    }
+    if (current === 1) {
+      this.$prevBtn.disabled = true;
+    }
   }
   invoking(keyStr) {
     this.invokingMap.get(keyStr)?.forEach((fn) => fn(this.pagination));
