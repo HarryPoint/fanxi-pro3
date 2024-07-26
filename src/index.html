@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="./styles/base.css" />
     <link rel="stylesheet" href="./styles/swiper.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script
+      src="https://afarkas.github.io/lazysizes/plugins/respimg/ls.respimg.js"
+      async
+    ></script> -->
     <script
       src="https://afarkas.github.io/lazysizes/lazysizes.min.js"
       async
@@ -79,8 +83,8 @@
         >
           <div class="swiper-slide relative text-white">
             <img
-              class="absolute left-0 top-0 h-full w-full object-cover"
-              src="./assets/banner_home.png"
+              class="lazyload absolute left-0 top-0 h-full w-full object-cover"
+              src="./assets/placeholder-1x.png" data-sizes="auto" data-srcset="./assets/banner_home-1x.png 1x, ./assets/banner_home-2x.png 2x"
               alt="banner"
             />
             <div
@@ -96,8 +100,8 @@
           </div>
           <div class="swiper-slide relative text-white">
             <img
-              class="absolute left-0 top-0 h-full w-full object-cover"
-              src="./assets/banner_about.png"
+              class="lazyload absolute left-0 top-0 h-full w-full object-cover"
+              src="./assets/placeholder-1x.png" data-sizes="auto" data-srcset="./assets/banner_about-1x.png 1x, ./assets/banner_about-2x.png 2x"
               alt="banner"
             />
             <div
@@ -111,8 +115,8 @@
           </div>
           <div class="swiper-slide relative text-white">
             <img
-              class="absolute left-0 top-0 h-full w-full object-cover"
-              src="./assets/banner_news.png"
+              class="lazyload absolute left-0 top-0 h-full w-full object-cover"
+              src="./assets/placeholder-1x.png" data-sizes="auto" data-srcset="./assets/banner_news-1x.png 1x, ./assets/banner_news-2x.png 2x"
               alt="banner"
             />
             <div
@@ -166,7 +170,7 @@
               <img class="lazyload w-full" src="./assets/placeholder-1x.png" data-size="auto"  data-srcset="./assets/Rectangle3-1x.png 1x, ./assets/Rectangle3-2x.png 2x" alt="" />
             </div>
             <div class="scrollShow w-3/5" data-effect="fadeIn">
-              <img class="lazyload w-full" src="./assets/placeholder-1x.png" data-size="auto"  data-srcset="./assets/Rectangle2-1x.png 1x, ./assets/Rectangle2-2x.png 2x" alt="" />
+              <img class="lazyload w-full" src="./assets/placeholder-1x.png" data-srcset="./assets/Rectangle2-1x.png 1x, ./assets/Rectangle2-2x.png 2x" alt="" />
             </div>
           </div>
           <div class="flex items-start justify-end *:p-1 lg:w-9/12 lg:*:p-4">
@@ -185,8 +189,8 @@
         style="background: url(./assets/Group27.png) center fixed"
       >
         <!-- <img
-          class="absolute left-0 top-0 h-full w-full object-cover"
-          src="./assets/Rectangle22.png"
+          class="lazyload absolute left-0 top-0 h-full w-full object-cover"
+          src="./assets/placeholder-1x.png" data-sizes="auto" data-srcset="./assets/Rectangle22-1x.png 1x, ./assets/Rectangle22-2x.png 2x"
         />
         <div
           class="absolute left-0 top-0 h-full w-full bg-black opacity-70"
@@ -230,8 +234,8 @@
             data-effect="fadeIn"
           >
             <img
-              class="h-full w-full object-cover transition group-hover/item:scale-105"
-              src="./assets/team1.png"
+              class="lazyload h-full w-full object-cover transition group-hover/item:scale-105"
+              src="./assets/placeholder-1x.png" data-sizes="auto" data-srcset="./assets/team1-1x.png 1x, ./assets/team1-2x.png 2x"
               alt=""
             />
             <div
@@ -258,8 +262,8 @@
             data-effect="fadeIn"
           >
             <img
-              class="h-full w-full object-cover transition group-hover/item:scale-105"
-              src="./assets/team2.png"
+              class="lazyload h-full w-full object-cover transition group-hover/item:scale-105"
+              src="./assets/placeholder-1x.png" data-sizes="auto" data-srcset="./assets/team2-1x.png 1x, ./assets/team2-2x.png 2x"
               alt=""
             />
             <div
@@ -287,7 +291,7 @@
           >
             <img
               class="h-full w-full object-cover transition group-hover/item:scale-105"
-              src="./assets/team3.png"
+              src="./assets/placeholder-1x.png" data-sizes="auto" data-srcset="./assets/team3-1x.png 1x, ./assets/team3-2x.png 2x"
               alt=""
             />
             <div
@@ -363,8 +367,8 @@
           </ul>
           <div class="mt-4 flex items-center gap-2 lg:mt-12 lg:justify-center">
             <img
-              class="aspect-square w-10 lg:w-12"
-              src="./assets/qrcode.png"
+              class="lazyload aspect-square w-10 lg:w-12"
+              src="./assets/placeholder-1x.png" data-sizes="auto" data-srcset="./assets/qrcode-1x.png 1x, ./assets/qrcode-2x.png 2x"
               alt=""
             />
             <div class="leading-4 lg:flex lg:gap-4">
