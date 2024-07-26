@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="./styles/base.css" />
     <link rel="stylesheet" href="./styles/swiper.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://afarkas.github.io/lazysizes/lazysizes.min.js"
+      async
+    ></script>
   </head>
   <body>
     <div class="wapper relative mx-auto">
@@ -19,11 +23,11 @@
           class="mx-auto flex h-14 items-center justify-between px-4 lg:container lg:h-24"
         >
           <a class="inline-flex items-center gap-2" href="./index.html">
-            <img class="lazyload w-6 lg:w-9" src="./assets/placeholder-1x.png" data-size="auto"  data-srcset="./assets/logo.png" alt="" />
+            <img class="lazyload w-6 lg:w-9" src="./assets/placeholder-1x.png" data-size="auto"  data-srcset="./assets/logo-1x.png 1x, ./assets/logo-2x.png 2x" alt="" />
             <span class="lg:text-2xl">企业站</span>
           </a>
           <a id="mobileHandleBar" class="lg:hidden">
-            <img class="lazyload w-6" src="./assets/placeholder-1x.png" data-size="auto"  data-srcset="./assets/Vector.png" alt="" />
+            <img class="lazyload w-6" src="./assets/placeholder-1x.png" data-size="auto"  data-srcset="./assets/Vector-1x.png 1x, ./assets/Vector-2x.png 2x" alt="" />
           </a>
           <!-- 展开项 -->
           <div
@@ -60,7 +64,7 @@
                 id="mobileMenuClose"
                 class="absolute right-0 top-0 h-14 p-4 lg:hidden"
               >
-                <img class="lazyload w-6" src="./assets/placeholder-1x.png" data-size="auto"  data-srcset="./assets/close_icon.png" alt="" />
+                <img class="lazyload w-6" src="./assets/placeholder-1x.png" data-size="auto"  data-srcset="./assets/close_icon-1x.png 1x, ./assets/close_icon-2x.png 2x" alt="" />
               </div>
             </div>
           </div>
