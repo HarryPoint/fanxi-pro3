@@ -1,4 +1,5 @@
 ready(async () => {
+  initMobileMenu();
   const api = new Api();
   const {
     data: { data },
