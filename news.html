@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="./styles/base.css" />
     <link rel="stylesheet" href="./styles/swiper.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://afarkas.github.io/lazysizes/lazysizes.min.js"
+      async
+    ></script>
   </head>
   <body>
     <div class="wapper relative mx-auto">
@@ -19,11 +23,11 @@
           class="mx-auto flex h-14 items-center justify-between px-4 lg:container lg:h-24"
         >
           <a class="inline-flex items-center gap-2" href="./index.html">
-            <img class="w-6 lg:w-9" src="./assets/logo.png" alt="" />
+            <img class="lazyload w-6 lg:w-9" src="./assets/logo-32.png" data-size="auto"  data-srcset="./assets/logo-360.png 360w, ./assets/logo-720.png 720w, ./assets/logo-1080.png 1080w" alt="" />
             <span class="lg:text-2xl">企业站</span>
           </a>
           <a id="mobileHandleBar" class="lg:hidden">
-            <img class="w-6" src="./assets/Vector.png" alt="" />
+            <img class="lazyload w-6" src="./assets/Vector-32.png" data-size="auto"  data-srcset="./assets/Vector-360.png 360w, ./assets/Vector-720.png 720w, ./assets/Vector-1080.png 1080w" alt="" />
           </a>
           <!-- 展开项 -->
           <div
@@ -60,7 +64,7 @@
                 id="mobileMenuClose"
                 class="absolute right-0 top-0 h-14 p-4 lg:hidden"
               >
-                <img class="w-6" src="./assets/close_icon.png" alt="" />
+                <img class="lazyload w-6" src="./assets/close_icon-32.png" data-size="auto"  data-srcset="./assets/close_icon-360.png 360w, ./assets/close_icon-720.png 720w, ./assets/close_icon-1080.png 1080w" alt="" />
               </div>
             </div>
           </div>
@@ -147,8 +151,8 @@
           </ul>
           <div class="mt-4 flex items-center gap-2 lg:mt-12 lg:justify-center">
             <img
-              class="aspect-square w-10 lg:w-12"
-              src="./assets/qrcode.png"
+              class="lazyload aspect-square w-10 lg:w-12"
+              src="./assets/qrcode-32.png" data-sizes="auto" data-srcset="./assets/qrcode-360.png 360w, ./assets/qrcode-720.png 720w, ./assets/qrcode-1080.png 1080w"
               alt=""
             />
             <div class="leading-4 lg:flex lg:gap-4">

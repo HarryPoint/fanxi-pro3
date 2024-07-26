@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="./styles/base.css" />
     <link rel="stylesheet" href="./styles/swiper.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script
+      src="https://afarkas.github.io/lazysizes/plugins/respimg/ls.respimg.js"
+      async
+    ></script> -->
+    <script
+      src="https://afarkas.github.io/lazysizes/lazysizes.min.js"
+      async
+    ></script>
   </head>
   <body>
     <div class="wapper relative mx-auto">
@@ -19,11 +27,11 @@
           class="mx-auto flex h-14 items-center justify-between px-4 lg:container lg:h-24"
         >
           <a class="inline-flex items-center gap-2" href="./index.html">
-            <img class="w-6 lg:w-9" src="./assets/logo.png" alt="" />
+            <img class="lazyload w-6 lg:w-9" src="./assets/logo-32.png" data-size="auto"  data-srcset="./assets/logo-360.png 360w, ./assets/logo-720.png 720w, ./assets/logo-1080.png 1080w" alt="" />
             <span class="lg:text-2xl">企业站</span>
           </a>
           <a id="mobileHandleBar" class="lg:hidden">
-            <img class="w-6" src="./assets/Vector.png" alt="" />
+            <img class="lazyload w-6" src="./assets/Vector-32.png" data-size="auto"  data-srcset="./assets/Vector-360.png 360w, ./assets/Vector-720.png 720w, ./assets/Vector-1080.png 1080w" alt="" />
           </a>
           <!-- 展开项 -->
           <div
@@ -60,7 +68,7 @@
                 id="mobileMenuClose"
                 class="absolute right-0 top-0 h-14 p-4 lg:hidden"
               >
-                <img class="w-6" src="./assets/close_icon.png" alt="" />
+                <img class="lazyload w-6" src="./assets/close_icon-32.png" data-size="auto"  data-srcset="./assets/close_icon-360.png 360w, ./assets/close_icon-720.png 720w, ./assets/close_icon-1080.png 1080w" alt="" />
               </div>
             </div>
           </div>
@@ -75,8 +83,8 @@
         >
           <div class="swiper-slide relative text-white">
             <img
-              class="absolute left-0 top-0 h-full w-full object-cover"
-              src="./assets/banner_home.png"
+              class="lazyload absolute left-0 top-0 h-full w-full object-cover"
+              src="./assets/banner_home-32.png" data-sizes="auto" data-srcset="./assets/banner_home-360.png 360w, ./assets/banner_home-720.png 720w, ./assets/banner_home-1080.png 1080w"
               alt="banner"
             />
             <div
@@ -92,8 +100,8 @@
           </div>
           <div class="swiper-slide relative text-white">
             <img
-              class="absolute left-0 top-0 h-full w-full object-cover"
-              src="./assets/banner_about.png"
+              class="lazyload absolute left-0 top-0 h-full w-full object-cover"
+              src="./assets/banner_about-32.png" data-sizes="auto" data-srcset="./assets/banner_about-360.png 360w, ./assets/banner_about-720.png 720w, ./assets/banner_about-1080.png 1080w"
               alt="banner"
             />
             <div
@@ -107,8 +115,8 @@
           </div>
           <div class="swiper-slide relative text-white">
             <img
-              class="absolute left-0 top-0 h-full w-full object-cover"
-              src="./assets/banner_news.png"
+              class="lazyload absolute left-0 top-0 h-full w-full object-cover"
+              src="./assets/banner_news-32.png" data-sizes="auto" data-srcset="./assets/banner_news-360.png 360w, ./assets/banner_news-720.png 720w, ./assets/banner_news-1080.png 1080w"
               alt="banner"
             />
             <div
@@ -159,18 +167,18 @@
         <div class="relative lg:-mt-96 lg:flex lg:flex-col lg:items-end">
           <div class="flex items-end justify-end *:p-1 lg:w-4/6 lg:*:p-4">
             <div class="scrollShow w-3/12" data-effect="fadeIn">
-              <img class="w-full" src="./assets/Rectangle3.png" alt="" />
+              <img class="lazyload w-full" src="./assets/Rectangle3-32.png" data-size="auto"  data-srcset="./assets/Rectangle3-360.png 360w, ./assets/Rectangle3-720.png 720w, ./assets/Rectangle3-1080.png 1080w" alt="" />
             </div>
             <div class="scrollShow w-3/5" data-effect="fadeIn">
-              <img class="w-full" src="./assets/Rectangle2.png" alt="" />
+              <img class="lazyload w-full" src="./assets/Rectangle2-32.png" data-size="auto" data-srcset="./assets/Rectangle2-360.png 360w, ./assets/Rectangle2-720.png 720w, ./assets/Rectangle2-1080.png 1080w" alt="" />
             </div>
           </div>
           <div class="flex items-start justify-end *:p-1 lg:w-9/12 lg:*:p-4">
             <div class="scrollShow w-3/5" data-effect="fadeIn">
-              <img class="w-full" src="./assets/Rectangle1.png" alt="" />
+              <img class="lazyload w-full" src="./assets/Rectangle1-32.png" data-size="auto"  data-srcset="./assets/Rectangle1-360.png 360w, ./assets/Rectangle1-720.png 720w, ./assets/Rectangle1-1080.png 1080w" alt="" />
             </div>
             <div class="scrollShow w-2/6" data-effect="fadeIn">
-              <img class="w-full" src="./assets/Rectangle4.png" alt="" />
+              <img class="lazyload w-full" src="./assets/Rectangle4-32.png" data-size="auto"  data-srcset="./assets/Rectangle4-360.png 360w, ./assets/Rectangle4-720.png 720w, ./assets/Rectangle4-1080.png 1080w" alt="" />
             </div>
           </div>
         </div>
@@ -178,11 +186,11 @@
       <!-- 企业文化 -->
       <section
         class="relative hidden py-20 text-white lg:block"
-        style="background: url(./assets/Group27.png) center fixed"
+        style="background: url(./assets/Group27-1080.png) center fixed"
       >
         <!-- <img
-          class="absolute left-0 top-0 h-full w-full object-cover"
-          src="./assets/Rectangle22.png"
+          class="lazyload absolute left-0 top-0 h-full w-full object-cover"
+          src="./assets/Rectangle22-32.png" data-sizes="auto" data-srcset="./assets/Rectangle22-360.png 360w, ./assets/Rectangle22-720.png 720w, ./assets/Rectangle22-1080.png 1080w"
         />
         <div
           class="absolute left-0 top-0 h-full w-full bg-black opacity-70"
@@ -226,8 +234,8 @@
             data-effect="fadeIn"
           >
             <img
-              class="h-full w-full object-cover transition group-hover/item:scale-105"
-              src="./assets/team1.png"
+              class="lazyload h-full w-full object-cover transition group-hover/item:scale-105"
+              src="./assets/team1-32.png" data-sizes="auto" data-srcset="./assets/team1-360.png 360w, ./assets/team1-720.png 720w, ./assets/team1-1080.png 1080w"
               alt=""
             />
             <div
@@ -254,8 +262,8 @@
             data-effect="fadeIn"
           >
             <img
-              class="h-full w-full object-cover transition group-hover/item:scale-105"
-              src="./assets/team2.png"
+              class="lazyload h-full w-full object-cover transition group-hover/item:scale-105"
+              src="./assets/team2-32.png" data-sizes="auto" data-srcset="./assets/team2-360.png 360w, ./assets/team2-720.png 720w, ./assets/team2-1080.png 1080w"
               alt=""
             />
             <div
@@ -282,8 +290,8 @@
             data-effect="fadeIn"
           >
             <img
-              class="h-full w-full object-cover transition group-hover/item:scale-105"
-              src="./assets/team3.png"
+              class="lazyload h-full w-full object-cover transition group-hover/item:scale-105"
+              src="./assets/team3-32.png" data-sizes="auto" data-srcset="./assets/team3-360.png 360w, ./assets/team3-720.png 720w, ./assets/team3-1080.png 1080w"
               alt=""
             />
             <div
@@ -359,8 +367,8 @@
           </ul>
           <div class="mt-4 flex items-center gap-2 lg:mt-12 lg:justify-center">
             <img
-              class="aspect-square w-10 lg:w-12"
-              src="./assets/qrcode.png"
+              class="lazyload aspect-square w-10 lg:w-12"
+              src="./assets/qrcode-32.png" data-sizes="auto" data-srcset="./assets/qrcode-360.png 360w, ./assets/qrcode-720.png 720w, ./assets/qrcode-1080.png 1080w"
               alt=""
             />
             <div class="leading-4 lg:flex lg:gap-4">
