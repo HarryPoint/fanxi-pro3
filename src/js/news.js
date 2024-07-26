@@ -5,7 +5,7 @@ function renderData(data) {
   const result = data.map((news) => {
     return newsTemplate
       .replace("{{id}}", news.id)
-      .replace("{{img}}", news.img)
+      .replace("{{thumb}}", news.thumb)
       .replace("{{title}}", news.title)
       .replace("{{summary}}", news.summary);
   });
