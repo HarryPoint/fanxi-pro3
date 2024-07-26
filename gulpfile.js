@@ -7,7 +7,9 @@ const img = () => {
   .pipe(sharpResponsive({
     formats: [32, 90, 180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048].map(width => {
       return {
-        width,
+        width: (metadata) => {
+          return Math.min(metadata.width, width)
+        },
         rename: {suffix: `-${width}`}
       }
     })
