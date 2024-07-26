@@ -60,6 +60,14 @@ class ScrollShow {
           opacity: 1,
         },
       ],
+      blurIn: [
+        {
+          filter: "blur(50px)",
+        },
+        {
+          filter: "blur(0px)",
+        },
+      ],
       ...effectMap,
     };
 
