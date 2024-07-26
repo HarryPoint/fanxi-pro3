@@ -100,6 +100,10 @@ class ScrollShow {
   }
   // 应用效果
   effectBind(el) {
+    // 排除已经绑定的元素
+    if (this.animationMap.has(el)) {
+      return;
+    }
     // 排除视口上方的元素
     if (!this.isBelowViewPort(el)) {
       return;

@@ -16,7 +16,7 @@ function renderPagination(links) {
   console.log("links: ", links);
 }
 
-async function initNewsList() {
+async function initNewsList(callBack) {
   const paginationIns = new Pagination();
   paginationIns.mount("#pagination-wrapper");
   paginationIns.onCurrentChange(({ current }) => {
@@ -37,6 +37,7 @@ async function initNewsList() {
       pageSize,
     });
     renderData(data);
+    callBack();
     paginationIns.update({
       current: links.current,
       pageSize: links.pageSize,
