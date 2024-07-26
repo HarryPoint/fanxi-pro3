@@ -92,6 +92,10 @@ class ScrollShow {
     return this;
   }
   isBelowViewPort(el) {
+    if (el.dataset.always) {
+      // 如果设置总是显示，则不排除视口上方的元素
+      return true;
+    }
     return el.getBoundingClientRect().top > window.innerHeight;
   }
   // 应用效果
