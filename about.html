@@ -84,41 +84,59 @@
           </div>
           <div class="mx-auto mt-3 h-1 w-16 bg-red-600"></div>
         </div>
-        <div id="detail" class="container mx-auto p-5">
+        <div
+          id="detail"
+          class="container mx-auto p-5 lg:flex lg:items-stretch lg:gap-5"
+        >
           <!-- js 动态插入 -->
-          <div id="mapBox"></div>
-          <h4 class="text-xl">一家专注系统高端定制开发的公司</h4>
-          <div class="mt-5 indent-8 text-gray-700 *:mt-2">
-            <p>
-              互联网指的是是网络与网络之间所串连成的庞大网络，这些网络以一组通用的协议相连，形成逻辑上的单一巨大国际网络。
-            </p>
-            <p>
-              互联网始于1969年美国的阿帕网。这种将计算机网络互相联接在一起的方法可称作“网络互联”，在这基础上发展出覆盖全世界的全球性互联网络称互联网，即是互相连接一起的网络结构。
-            </p>
-            <p>
-              我们出色的专业开发团队扎实的技术支持，优质高效的服务意识和丰厚的资源优势，提供专业的网站建设，微信小程序，APP开发，等技术服务。成果，专注于为客户提供专业有效的互联网系统解决方案。
-            </p>
+          <div
+            id="mapBox"
+            class="aspect-video w-full bg-slate-500 lg:w-1/2"
+          ></div>
+          <div class="mt-5 lg:w-1/2">
+            <h4 class="text-xl">一家专注系统高端定制开发的公司</h4>
+            <div class="mt-5 text-gray-700 *:mt-2 lg:leading-8">
+              <p>
+                互联网指的是是网络与网络之间所串连成的庞大网络，这些网络以一组通用的协议相连，形成逻辑上的单一巨大国际网络。
+              </p>
+              <p>
+                互联网始于1969年美国的阿帕网。这种将计算机网络互相联接在一起的方法可称作“网络互联”，在这基础上发展出覆盖全世界的全球性互联网络称互联网，即是互相连接一起的网络结构。
+              </p>
+              <p>
+                我们出色的专业开发团队扎实的技术支持，优质高效的服务意识和丰厚的资源优势，提供专业的网站建设，微信小程序，APP开发，等技术服务。成果，专注于为客户提供专业有效的互联网系统解决方案。
+              </p>
+            </div>
+            <ul class="mt-6 *:mt-2 lg:*:mt-4">
+              <li class="flex items-center">
+                <img
+                  class="mr-2 w-4"
+                  src="./assets/location_icon.png"
+                  alt="icon"
+                />
+                <span class="text-xs text-gray-800">
+                  地址：中国山东省青岛市市南区某某中路20号
+                </span>
+              </li>
+              <li class="flex items-center">
+                <img
+                  class="mr-2 w-4"
+                  src="./assets/emial_icon.png"
+                  alt="icon"
+                />
+                <span class="text-xs text-gray-800"
+                  >邮箱：1370XXX171@qq.com</span
+                >
+              </li>
+              <li class="flex items-center">
+                <img
+                  class="mr-2 w-4"
+                  src="./assets/phone_icon.png"
+                  alt="icon"
+                />
+                <span class="text-xs text-gray-800">电话：0591-88888888</span>
+              </li>
+            </ul>
           </div>
-          <ul class="mt-6 *:mt-2">
-            <li class="flex items-center">
-              <img
-                class="mr-2 w-4"
-                src="./assets/location_icon.png"
-                alt="icon"
-              />
-              <span class="text-xs text-gray-800">
-                地址：中国山东省青岛市市南区某某中路20号
-              </span>
-            </li>
-            <li class="flex items-center">
-              <img class="mr-2 w-4" src="./assets/emial_icon.png" alt="icon" />
-              <span class="text-xs text-gray-800">邮箱：1370XXX171@qq.com</span>
-            </li>
-            <li class="flex items-center">
-              <img class="mr-2 w-4" src="./assets/phone_icon.png" alt="icon" />
-              <span class="text-xs text-gray-800">电话：0591-88888888</span>
-            </li>
-          </ul>
         </div>
       </section>
       <!-- 页脚 -->
@@ -149,6 +167,12 @@
     <script src="./js/swiper.js"></script>
     <script src="./js/scrollshow.js"></script>
     <script src="./js/common.js"></script>
+    <script type="text/javascript">
+      window._AMapSecurityConfig = {
+        securityJsCode: "9bbb35c80224ec90dceecc79d0ca8cc1",
+      };
+    </script>
+    <script src="https://webapi.amap.com/loader.js"></script>
     <script src="./js/about.js"></script>
   </body>
 </html>
