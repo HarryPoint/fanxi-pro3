@@ -10,6 +10,7 @@ const img = () => {
         width: (metadata) => {
           return Math.min(metadata.width, width)
         },
+        format: 'webp',
         rename: {suffix: `-${width}`}
       }
     })
