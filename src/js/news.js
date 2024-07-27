@@ -2,6 +2,7 @@ const api = new Api();
 
 function renderData(data) {
   const eNewsList = document.querySelector("#newsList");
+  eNewsList.classList.remove('loading');
   const result = data.map((news) => {
     return newsTemplate
       .replace("{{id}}", news.id)
@@ -30,6 +31,7 @@ async function initNewsList(callBack) {
   async function update({ page, pageSize } = {}) {
     page = page || getQueryParam("page") || 1;
     pageSize = pageSize || getQueryParam("pageSize") || 20;
+    document.querySelector("#newsList").classList.add('loading');
     const {
       data: { data, links },
     } = await api.getNews({
