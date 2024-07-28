@@ -39,3 +39,40 @@
 .swiper-pagination {
   z-index: 1;
 }
+
+@property --d {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+.spin {
+  min-width: 6px;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  --d: 0deg;
+  background: conic-gradient(from 0deg, #fff, #fff var(--d), #4e4e4e var(--d), #4e4e4e 360deg);
+  overflow: hidden;
+}
+.spin.active {
+  animation: round 5s linear 0s infinite;
+}
+.spin.stop {
+  animation-play-state: paused;
+}
+.spin .inner {
+  background: #000;
+  width: calc(100% - 4px);
+  aspect-ratio: 1;
+  position: relative;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+}
+@keyframes round {
+  0% {
+      --d: 0deg;
+  }
+  100% {
+      --d: 360deg;
+  }
+}

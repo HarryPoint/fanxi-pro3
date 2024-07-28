@@ -43,7 +43,8 @@ class Swiper {
 
     this.$dots = Array.from({ length: this.slidesCount }).map((_, index) => {
       const dot = document.createElement("div");
-      dot.classList.add(...this.params.pagination.class)
+      dot.innerHTML = `<div class="inner"></div>`
+      dot.classList.add(...this.params.pagination.class, 'spin')
       dot.style.cursor = "pointer";
       dot.addEventListener("click", () => {
         this.moveTo(index);
@@ -95,6 +96,9 @@ class Swiper {
     }
   }
   autoPlay(tick = 5000) {
+    this.$dots.forEach(itm => {
+      itm.style.animationDuration = `${tick}ms`
+    })
     this.autoPlayFlag = true;
     this.timer = setInterval(() => {
       this.next();
