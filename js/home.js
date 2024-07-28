@@ -8,13 +8,11 @@ function initSwiper() {
         "aspect-square",
         "w-3",
         "rounded-full",
-        "border-2",
-        "border-gray-600",
       ],
-      activeClass: ["w-4", "border-white"],
+      activeClass: ["w-4", "border-white", "active"],
     },
   });
-  sw.autoPlay();
+  sw.autoPlay(5000);
 }
 
 async function initNews() {

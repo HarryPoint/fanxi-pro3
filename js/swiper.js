@@ -12,10 +12,13 @@ class Swiper {
 
     this.$el = document.querySelector(this.el);
     this.$wrapper = this.$el.querySelector(".swiper-wrapper");
-    this.width = this.$wrapper.clientWidth;
-    this.$slides = Array.from(this.$wrapper.querySelectorAll(".swiper-slide"));
+    this.$slides = Array.from(this.$wrapper.querySelectorAll(".swiper-slide")).map(item => {
+      const slide = document.createElement('div')
+      slide.classList.add('swiper-slide-wrapper', 'group', 'w-full', 'h-full', 'absolute');
+      slide.append(item);
+      return slide
+    });
     this.$slides.forEach(($slide) => {
-      $slide.style.width = `${this.width}px`;
       $slide.addEventListener("mouseenter", () => {
         this.stop();
       });
@@ -32,50 +35,54 @@ class Swiper {
 
     // dom 构造
     this.$inner = document.createElement("div");
-    this.$inner.classList.add("swiper-wrapper-inner");
-    this.$inner.style.width = `${this.width * this.slidesCount}px`;
+    this.$inner.classList.add("swiper-wrapper-inner", "relative", "w-full", "h-full", "overflow-hidden");
     this.$inner.append(...this.$slides);
-    this.$fakePreSlide = this.$slides[this.slidesCount - 1].cloneNode(true);
-    this.$fakePreSlide.style = `position: absolute; width: ${this.width}px; height: 100%; left: -${this.width}px; top: 0`;
-    this.$fakeEndSlide = this.$slides[0].cloneNode(true);
-    this.$fakeEndSlide.style = `position: absolute; width: ${this.width}px; height: 100%; left: ${this.width * this.slidesCount}px; top: 0`;
-    this.$inner.prepend(this.$fakePreSlide);
-    this.$inner.append(this.$fakeEndSlide);
     this.$wrapper.append(this.$inner);
 
     this.$pagination = this.$el.querySelector(".swiper-pagination");
 
     this.$dots = Array.from({ length: this.slidesCount }).map((_, index) => {
       const dot = document.createElement("div");
+      dot.innerHTML = `<div class="inner"></div>`
+      dot.classList.add(...this.params.pagination.class, 'spin')
+      dot.style.cursor = "pointer";
       dot.addEventListener("click", () => {
         this.moveTo(index);
       });
       return dot;
     });
     this.$pagination.append(...this.$dots);
-
-    this.moveTo(this.currentIndex);
+    this.slideSetIn(this.$slides[this.currentIndex]);
+    this.dotSetIn(this.$dots[this.currentIndex]);
+  }
+  slideSetOut(dom) {
+    dom.classList.remove('active', 'in');
+    dom.classList.add('out');
+  }
+  slideSetIn(dom) {
+    dom.classList.remove('out');
+    dom.classList.add('in', 'active');
+  }
+  dotSetOut(dot) {
+    dot.classList.remove(...this.params.pagination.activeClass);
+  }
+  dotSetIn(dot) {
+    dot.classList.add(...this.params.pagination.activeClass);
   }
   moveTo(nextIndex) {
-    this.$inner.style.transform = `translateX(-${this.width * nextIndex}px)`;
-    this.$inner.style.transition = "0.5s";
     this.$dots.forEach((dot, index) => {
-      dot.classList.add(...this.params.pagination.class);
       if (index === nextIndex) {
-        dot.classList.add(...this.params.pagination.activeClass);
+        this.dotSetIn(dot);
       } else {
-        dot.classList.remove(...this.params.pagination.activeClass);
+        this.dotSetOut(dot);
       }
     });
+    this.slideSetOut(this.$slides[this.currentIndex])
+    this.slideSetIn(this.$slides[nextIndex])
     this.currentIndex = nextIndex;
   }
   next() {
     if (this.currentIndex >= this.slidesCount - 1) {
-      // 重置位置
-      this.$inner.style.transition = "none";
-      this.$inner.style.transform = `translateX(${this.width}px)`;
-      // 触发渲染
-      this.$inner.clientHeight;
       this.moveTo(0);
     } else {
       this.moveTo(this.currentIndex + 1);
@@ -83,17 +90,15 @@ class Swiper {
   }
   prev() {
     if (this.currentIndex === 0) {
-      // 重置位置
-      this.$inner.style.transition = "none";
-      this.$inner.style.transform = `translateX(-${this.width * this.slidesCount}px)`;
-      // 触发渲染
-      this.$inner.clientHeight;
       this.moveTo(this.slidesCount - 1);
     } else {
       this.moveTo(this.currentIndex - 1);
     }
   }
   autoPlay(tick = 5000) {
+    this.$dots.forEach(itm => {
+      itm.style.animationDuration = `${tick}ms`
+    })
     this.autoPlayFlag = true;
     this.timer = setInterval(() => {
       this.next();
