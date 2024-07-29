@@ -4,15 +4,10 @@ var sw;
 function initSwiper() {
   sw = new Swiper("#swiper", {
     pagination: {
-      class: [
-        "aspect-square",
-        "w-3",
-        "rounded-full",
-      ],
+      class: ["aspect-square", "w-3", "rounded-full"],
       activeClass: ["w-4", "border-white", "active"],
     },
   });
-  sw.autoPlay(5000);
 }
 
 async function initNews() {

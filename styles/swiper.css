@@ -41,7 +41,7 @@
 }
 
 @property --d {
-  syntax: '<angle>';
+  syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
 }
@@ -50,11 +50,17 @@
   border-radius: 50%;
   aspect-ratio: 1;
   --d: 0deg;
-  background: conic-gradient(from 0deg, #fff, #fff var(--d), #4e4e4e var(--d), #4e4e4e 360deg);
+  background: conic-gradient(
+    from 0deg,
+    #fff,
+    #fff var(--d),
+    #4e4e4e var(--d),
+    #4e4e4e 360deg
+  );
   overflow: hidden;
 }
 .spin.active {
-  animation: round 5s linear 0s infinite;
+  animation: round 5s linear 0s;
 }
 .spin.stop {
   animation-play-state: paused;
@@ -70,9 +76,9 @@
 }
 @keyframes round {
   0% {
-      --d: 0deg;
+    --d: 0deg;
   }
   100% {
-      --d: 360deg;
+    --d: 360deg;
   }
 }
