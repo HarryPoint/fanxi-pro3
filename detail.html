@@ -9,123 +9,138 @@
     <link rel="stylesheet" href="./styles/tailwind.min.css" />
     <link rel="stylesheet" href="./styles/base.css" />
     <link rel="stylesheet" href="./styles/swiper.css" />
-    <script
-      src="./js/lazysizes.min.js"
-      async
-    ></script>
+    <script src="./js/lazysizes.min.js" async></script>
   </head>
   <body>
-    <div class="wapper relative mx-auto">
-      <!-- header -->
-      <section class="sticky top-0 z-50 bg-gray-950 text-white">
-        <!-- top bar -->
+    <!-- header -->
+    <section class="sticky top-0 z-50 bg-gray-950 text-white">
+      <!-- top bar -->
+      <div
+        class="mx-auto flex h-14 items-center justify-between px-4 lg:container lg:h-24"
+      >
+        <a class="inline-flex items-center gap-2" href="./index.html">
+          <img
+            class="lazyload w-6 lg:w-9"
+            src="./assets/logo-32.webp"
+            data-size="auto"
+            data-srcset="./assets/logo-360.webp 360w, ./assets/logo-720.webp 720w, ./assets/logo-1080.webp 1080w, ./assets/logo-1512.webp 1512w, ./assets/logo-2048.webp 2048w"
+            alt=""
+          />
+          <span class="lg:text-2xl">企业站</span>
+        </a>
+        <a id="mobileHandleBar" class="lg:hidden">
+          <img
+            class="lazyload w-6"
+            src="./assets/Vector-32.webp"
+            data-size="auto"
+            data-srcset="./assets/Vector-360.webp 360w, ./assets/Vector-720.webp 720w, ./assets/Vector-1080.webp 1080w, ./assets/Vector-1512.webp 1512w, ./assets/Vector-2048.webp 2048w"
+            alt=""
+          />
+        </a>
+        <!-- 展开项 -->
         <div
-          class="mx-auto flex h-14 items-center justify-between px-4 lg:container lg:h-24"
+          id="mobileMenu"
+          class="absolute left-0 top-0 w-screen overflow-hidden lg:static lg:h-auto lg:w-auto"
         >
-          <a class="inline-flex items-center gap-2" href="./index.html">
-            <img class="lazyload w-6 lg:w-9" src="./assets/logo-32.webp" data-size="auto"  data-srcset="./assets/logo-360.webp 360w, ./assets/logo-720.webp 720w, ./assets/logo-1080.webp 1080w, ./assets/logo-1512.webp 1512w, ./assets/logo-2048.webp 2048w" alt="" />
-            <span class="lg:text-2xl">企业站</span>
-          </a>
-          <a id="mobileHandleBar" class="lg:hidden">
-            <img class="lazyload w-6" src="./assets/Vector-32.webp" data-size="auto"  data-srcset="./assets/Vector-360.webp 360w, ./assets/Vector-720.webp 720w, ./assets/Vector-1080.webp 1080w, ./assets/Vector-1512.webp 1512w, ./assets/Vector-2048.webp 2048w" alt="" />
-          </a>
-          <!-- 展开项 -->
           <div
-            id="mobileMenu"
-            class="absolute left-0 top-0 w-screen overflow-hidden lg:static lg:h-auto lg:w-auto"
+            id="mobileMenuContent"
+            class="absolute right-0 top-0 h-screen w-2/3 bg-neutral-800 text-white lg:static lg:h-auto lg:w-auto lg:bg-transparent lg:text-sm"
           >
             <div
-              id="mobileMenuContent"
-              class="absolute right-0 top-0 h-screen w-2/3 bg-neutral-800 text-white lg:static lg:h-auto lg:w-auto lg:bg-transparent lg:text-sm"
+              class="flex flex-col divide-y divide-neutral-600 px-5 *:leading-10 lg:flex-row lg:divide-y-0 lg:text-lg"
             >
-              <div
-                class="flex flex-col divide-y divide-neutral-600 px-5 *:leading-10 lg:flex-row lg:divide-y-0 lg:text-lg"
+              <a
+                class="px-3 py-10 transition hover:text-red-600 lg:py-0"
+                href="./index.html"
               >
-                <a
-                  class="px-3 py-10 transition hover:text-red-600 lg:py-0"
-                  href="./index.html"
-                >
-                  首页
-                </a>
-                <a
-                  class="relative block px-3 py-10 text-red-500 transition hover:text-red-600 lg:py-0 lg:text-white lg:after:absolute lg:after:bottom-0 lg:after:left-1/2 lg:after:block lg:after:h-0.5 lg:after:w-6 lg:after:-translate-x-1/2 lg:after:bg-red-500"
-                  href="./index.html"
-                >
-                  新闻列表
-                </a>
-                <a
-                  class="px-3 py-10 transition hover:text-red-600 lg:py-0"
-                  href="./about.html"
-                >
-                  关于我们
-                </a>
-              </div>
-              <div
-                id="mobileMenuClose"
-                class="absolute right-0 top-0 h-14 p-4 lg:hidden"
+                首页
+              </a>
+              <a
+                class="relative block px-3 py-10 text-red-500 transition hover:text-red-600 lg:py-0 lg:text-white lg:after:absolute lg:after:bottom-0 lg:after:left-1/2 lg:after:block lg:after:h-0.5 lg:after:w-6 lg:after:-translate-x-1/2 lg:after:bg-red-500"
+                href="./index.html"
               >
-                <img class="lazyload w-6" src="./assets/close_icon-32.webp" data-size="auto"  data-srcset="./assets/close_icon-360.webp 360w, ./assets/close_icon-720.webp 720w, ./assets/close_icon-1080.webp 1080w, ./assets/close_icon-1512.webp 1512w, ./assets/close_icon-2048.webp 2048w" alt="" />
-              </div>
+                新闻列表
+              </a>
+              <a
+                class="px-3 py-10 transition hover:text-red-600 lg:py-0"
+                href="./about.html"
+              >
+                关于我们
+              </a>
+            </div>
+            <div
+              id="mobileMenuClose"
+              class="absolute right-0 top-0 h-14 p-4 lg:hidden"
+            >
+              <img
+                class="lazyload w-6"
+                src="./assets/close_icon-32.webp"
+                data-size="auto"
+                data-srcset="./assets/close_icon-360.webp 360w, ./assets/close_icon-720.webp 720w, ./assets/close_icon-1080.webp 1080w, ./assets/close_icon-1512.webp 1512w, ./assets/close_icon-2048.webp 2048w"
+                alt=""
+              />
             </div>
           </div>
         </div>
-      </section>
-      <section class="pb-5 lg:pt-10">
-        <div class="container relative mx-auto py-5 text-center">
-          <div
-            class="text-stroke -translate-x-3 text-4xl text-transparent lg:text-8xl"
-          >
-            News Detail page
-          </div>
-          <div
-            class="scrollShow -mt-6 translate-x-0 text-4xl"
-            data-effect="slideRight"
-          >
-            新闻详情
-          </div>
-          <div class="mx-auto mt-3 h-1 w-16 bg-red-600"></div>
-        </div>
-        <div id="detail" class="container mx-auto p-5">
-          <!-- js 动态插入 -->
-          <div>
-              <div class="overflow-hidden loading">
-                  <img
-                      class="srcollShow w-full aspect-video object-cover bg-slate-200"
-                      data-always="true"
-                  />
-              </div>
-              <div class="py-5">
-                  <h2 class="text-center text-2xl">&nbsp;</h2>
-                  <h6 class="text-center text-gray-400 mt-2">&nbsp;</h6>
-                  <div class="mt-5 indent-8 text-gray-500">&nbsp;</div>
-              </div>
-          </div>
-        </div>
-      </section>
-      <!-- 页脚 -->
-      <section class="bg-red-500">
+      </div>
+    </section>
+    <section class="pb-5 lg:pt-10">
+      <div class="container relative mx-auto py-5 text-center">
         <div
-          class="container mx-auto p-6 text-xs text-white lg:py-12 lg:text-base"
+          class="text-stroke -translate-x-3 text-4xl text-transparent lg:text-8xl"
         >
-          <ul class="leading-6 lg:flex lg:justify-around lg:px-12">
-            <li>地址：中国山东省青岛市南区某某20号</li>
-            <li>邮箱：1223xxx@qq.com</li>
-            <li>电话：0591-888988998</li>
-          </ul>
-          <div class="mt-4 flex items-center gap-2 lg:mt-12 lg:justify-center">
+          News Detail page
+        </div>
+        <div
+          class="scrollShow -mt-6 translate-x-0 text-4xl"
+          data-effect="slideRight"
+        >
+          新闻详情
+        </div>
+        <div class="mx-auto mt-3 h-1 w-16 bg-red-600"></div>
+      </div>
+      <div id="detail" class="container mx-auto p-5">
+        <!-- js 动态插入 -->
+        <div>
+          <div class="loading overflow-hidden">
             <img
-              class="lazyload aspect-square w-10 lg:w-12"
-              src="./assets/qrcode-32.webp" data-sizes="auto" data-srcset="./assets/qrcode-360.webp 360w, ./assets/qrcode-720.webp 720w, ./assets/qrcode-1080.webp 1080w, ./assets/qrcode-1512.webp 1512w, ./assets/qrcode-2048.webp 2048w"
-              alt=""
+              class="srcollShow aspect-video w-full bg-slate-200 object-cover"
+              data-always="true"
             />
-            <div class="leading-4 lg:flex lg:gap-4">
-              <p>Copyright & 2009 - 2022 Cld, All Rights Reserved</p>
-              <p>某菜网络科技有限公司 版权所有 陕ICP备xxxx×xxx号</p>
-            </div>
+          </div>
+          <div class="py-5">
+            <h2 class="text-center text-2xl">&nbsp;</h2>
+            <h6 class="mt-2 text-center text-gray-400">&nbsp;</h6>
+            <div class="mt-5 indent-8 text-gray-500">&nbsp;</div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+    <!-- 页脚 -->
+    <section class="bg-red-500">
+      <div
+        class="container mx-auto p-6 text-xs text-white lg:py-12 lg:text-base"
+      >
+        <ul class="leading-6 lg:flex lg:justify-around lg:px-12">
+          <li>地址：中国山东省青岛市南区某某20号</li>
+          <li>邮箱：1223xxx@qq.com</li>
+          <li>电话：0591-888988998</li>
+        </ul>
+        <div class="mt-4 flex items-center gap-2 lg:mt-12 lg:justify-center">
+          <img
+            class="lazyload aspect-square w-10 lg:w-12"
+            src="./assets/qrcode-32.webp"
+            data-sizes="auto"
+            data-srcset="./assets/qrcode-360.webp 360w, ./assets/qrcode-720.webp 720w, ./assets/qrcode-1080.webp 1080w, ./assets/qrcode-1512.webp 1512w, ./assets/qrcode-2048.webp 2048w"
+            alt=""
+          />
+          <div class="leading-4 lg:flex lg:gap-4">
+            <p>Copyright & 2009 - 2022 Cld, All Rights Reserved</p>
+            <p>某菜网络科技有限公司 版权所有 陕ICP备xxxx×xxx号</p>
+          </div>
+        </div>
+      </div>
+    </section>
     <script src="./js/axios.min.js"></script>
     <script src="./js/scrollshow.js"></script>
     <script src="./js/common.js"></script>

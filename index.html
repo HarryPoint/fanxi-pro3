@@ -13,372 +13,411 @@
       src="https://afarkas.github.io/lazysizes/plugins/respimg/ls.respimg.js"
       async
     ></script> -->
-    <script
-      src="./js/lazysizes.min.js"
-      async
-    ></script>
+    <script src="./js/lazysizes.min.js" async></script>
   </head>
   <body>
-    <div class="wapper relative mx-auto">
-      <!-- header -->
-      <section class="sticky top-0 z-50 bg-gray-950 text-white">
-        <!-- top bar -->
+    <!-- header -->
+    <section class="sticky top-0 z-50 bg-gray-950 text-white">
+      <!-- top bar -->
+      <div
+        class="mx-auto flex h-14 items-center justify-between px-4 lg:container lg:h-24"
+      >
+        <a class="inline-flex items-center gap-2" href="./index.html">
+          <img
+            class="lazyload w-6 lg:w-9"
+            src="./assets/logo-32.webp"
+            data-size="auto"
+            data-srcset="./assets/logo-360.webp 360w, ./assets/logo-720.webp 720w, ./assets/logo-1080.webp 1080w, ./assets/logo-1512.webp 1512w, ./assets/logo-2048.webp 2048w"
+            alt=""
+          />
+          <span class="lg:text-2xl">企业站</span>
+        </a>
+        <a id="mobileHandleBar" class="lg:hidden">
+          <img
+            class="lazyload w-6"
+            src="./assets/Vector-32.webp"
+            data-size="auto"
+            data-srcset="./assets/Vector-360.webp 360w, ./assets/Vector-720.webp 720w, ./assets/Vector-1080.webp 1080w, ./assets/Vector-1512.webp 1512w, ./assets/Vector-2048.webp 2048w"
+            alt=""
+          />
+        </a>
+        <!-- 展开项 -->
         <div
-          class="mx-auto flex h-14 items-center justify-between px-4 lg:container lg:h-24"
+          id="mobileMenu"
+          class="absolute left-0 top-0 w-screen overflow-hidden lg:static lg:h-auto lg:w-auto"
         >
-          <a class="inline-flex items-center gap-2" href="./index.html">
-            <img class="lazyload w-6 lg:w-9" src="./assets/logo-32.webp" data-size="auto"  data-srcset="./assets/logo-360.webp 360w, ./assets/logo-720.webp 720w, ./assets/logo-1080.webp 1080w, ./assets/logo-1512.webp 1512w, ./assets/logo-2048.webp 2048w" alt="" />
-            <span class="lg:text-2xl">企业站</span>
-          </a>
-          <a id="mobileHandleBar" class="lg:hidden">
-            <img class="lazyload w-6" src="./assets/Vector-32.webp" data-size="auto"  data-srcset="./assets/Vector-360.webp 360w, ./assets/Vector-720.webp 720w, ./assets/Vector-1080.webp 1080w, ./assets/Vector-1512.webp 1512w, ./assets/Vector-2048.webp 2048w" alt="" />
-          </a>
-          <!-- 展开项 -->
           <div
-            id="mobileMenu"
-            class="absolute left-0 top-0 w-screen overflow-hidden lg:static lg:h-auto lg:w-auto"
+            id="mobileMenuContent"
+            class="absolute right-0 top-0 h-screen w-2/3 bg-neutral-800 text-white lg:static lg:h-auto lg:w-auto lg:bg-transparent lg:text-sm"
           >
             <div
-              id="mobileMenuContent"
-              class="absolute right-0 top-0 h-screen w-2/3 bg-neutral-800 text-white lg:static lg:h-auto lg:w-auto lg:bg-transparent lg:text-sm"
+              class="flex flex-col divide-y divide-neutral-600 px-5 *:leading-10 lg:flex-row lg:divide-y-0 lg:text-lg"
             >
-              <div
-                class="flex flex-col divide-y divide-neutral-600 px-5 *:leading-10 lg:flex-row lg:divide-y-0 lg:text-lg"
+              <a
+                class="relative block px-3 py-10 text-red-500 transition hover:text-red-600 lg:py-0 lg:text-white lg:after:absolute lg:after:bottom-0 lg:after:left-1/2 lg:after:block lg:after:h-0.5 lg:after:w-6 lg:after:-translate-x-1/2 lg:after:bg-red-500"
+                href="./index.html"
               >
-                <a
-                  class="relative block px-3 py-10 text-red-500 transition hover:text-red-600 lg:py-0 lg:text-white lg:after:absolute lg:after:bottom-0 lg:after:left-1/2 lg:after:block lg:after:h-0.5 lg:after:w-6 lg:after:-translate-x-1/2 lg:after:bg-red-500"
-                  href="./index.html"
-                >
-                  首页
-                </a>
-                <a
-                  class="px-3 py-10 transition hover:text-red-600 lg:py-0"
-                  href="./news.html"
-                >
-                  新闻列表
-                </a>
-                <a
-                  class="px-3 py-10 transition hover:text-red-600 lg:py-0"
-                  href="./about.html"
-                >
-                  关于我们
-                </a>
-              </div>
-              <div
-                id="mobileMenuClose"
-                class="absolute right-0 top-0 h-14 p-4 lg:hidden"
+                首页
+              </a>
+              <a
+                class="px-3 py-10 transition hover:text-red-600 lg:py-0"
+                href="./news.html"
               >
-                <img class="lazyload w-6" src="./assets/close_icon-32.webp" data-size="auto"  data-srcset="./assets/close_icon-360.webp 360w, ./assets/close_icon-720.webp 720w, ./assets/close_icon-1080.webp 1080w, ./assets/close_icon-1512.webp 1512w, ./assets/close_icon-2048.webp 2048w" alt="" />
-              </div>
+                新闻列表
+              </a>
+              <a
+                class="px-3 py-10 transition hover:text-red-600 lg:py-0"
+                href="./about.html"
+              >
+                关于我们
+              </a>
+            </div>
+            <div
+              id="mobileMenuClose"
+              class="absolute right-0 top-0 h-14 p-4 lg:hidden"
+            >
+              <img
+                class="lazyload w-6"
+                src="./assets/close_icon-32.webp"
+                data-size="auto"
+                data-srcset="./assets/close_icon-360.webp 360w, ./assets/close_icon-720.webp 720w, ./assets/close_icon-1080.webp 1080w, ./assets/close_icon-1512.webp 1512w, ./assets/close_icon-2048.webp 2048w"
+                alt=""
+              />
             </div>
           </div>
         </div>
-      </section>
-      <!-- banner -->
-      <section class="relative mx-auto lg:-mt-24" id="swiper">
-        <!-- banner图片 -->
-        <div
-          class="swiper-wrapper relative aspect-[7/5] lg:aspect-[12/5]"
-          id="banner"
-        >
-          <div class="swiper-slide w-full h-full relative text-white">
-            <img
-              class="lazyload absolute left-0 top-0 h-full w-full object-cover"
-              src="./assets/banner_home-32.webp" data-sizes="auto" data-srcset="./assets/banner_home-360.webp 360w, ./assets/banner_home-720.webp 720w, ./assets/banner_home-1080.webp 1080w, ./assets/banner_home-1512.webp 1512w, ./assets/banner_home-2048.webp 2048w"
-              alt="banner"
-            />
-            <div
-              class="absolute bottom-12 left-1/2 w-10/12 -translate-x-1/2 text-center lg:bottom-36 lg:w-8/12"
-            >
-              <div class="main-txt text-lg leading-10 lg:text-7xl">
-                开启互联网+ 从我们开始
-              </div>
-              <div class="sub-txt text-xs lg:mt-9 lg:text-3xl">
-                域名主机，网站建设，云服务器，企业邮箱一站式解决
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide w-full h-full  relative text-white">
-            <img
-              class="lazyload absolute left-0 top-0 h-full w-full object-cover"
-              src="./assets/banner_about-32.webp" data-sizes="auto" data-srcset="./assets/banner_about-360.webp 360w, ./assets/banner_about-720.webp 720w, ./assets/banner_about-1080.webp 1080w, ./assets/banner_about-1512.webp 1512w, ./assets/banner_about-2048.webp 2048w"
-              alt="banner"
-            />
-            <div
-              class="absolute bottom-12 left-1/2 w-10/12 -translate-x-1/2 text-center lg:bottom-36 lg:w-8/12"
-            >
-              <div class="main-txt text-lg leading-10 lg:text-7xl">关于我们</div>
-              <div class="sub-txt text-xs lg:mt-9 lg:text-3xl">
-                企业构建互联网信息技术服务平台，领先技术变革，提升产业效率，致力于使能软件企业引领发展，服务制造企业转型升级，为政企客户提供“多快好省”的信息技术服务。
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide w-full h-full relative text-white">
-            <img
-              class="lazyload absolute left-0 top-0 h-full w-full object-cover"
-              src="./assets/banner_news-32.webp" data-sizes="auto" data-srcset="./assets/banner_news-360.webp 360w, ./assets/banner_news-720.webp 720w, ./assets/banner_news-1080.webp 1080w, ./assets/banner_news-1512.webp 1512w, ./assets/banner_news-2048.webp 2048w"
-              alt="banner"
-            />
-            <div
-              class="absolute bottom-12 left-1/2 w-10/12 -translate-x-1/2 text-center lg:bottom-36 lg:w-8/12"
-            >
-              <div class="main-txt text-lg leading-10 lg:text-7xl">新闻中心</div>
-              <div class="sub-txt text-xs lg:mt-9 lg:text-3xl">
-                几乎所有的伟大成就，都是团队集体协作追求远大目标的结果。这些团队的领导者挑选了团队的成员，并激励他们追求自己不敢想象的成就。
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- 控制器 -->
-        <div
-          class="swiper-pagination absolute left-4 top-0 flex h-full flex-col items-center justify-center gap-3"
-          id="control"
-        ></div>
-      </section>
-      <!-- service scope -->
-      <section class="py-3 lg:py-10">
-        <!-- content -->
-        <div class="container mx-auto px-5 lg:flex lg:flex-col lg:items-start">
-          <!-- title -->
-          <div class="relative">
-            <div
-              class="text-stroke text-4xl text-transparent lg:-ml-12 lg:text-8xl"
-            >
-              Service scope
-            </div>
-            <div class="-mt-4 ml-3 text-4xl">服务范围</div>
-          </div>
-          <!-- 正文内容 -->
-          <div class="lg:mt-9 lg:w-5/12">
-            <p
-              class="scrollShow mt-3 break-all text-sm text-gray-400 lg:text-xl"
-              data-effect="slideLeft"
-            >
-              依托百度政务混合云，汇聚城市管理及公安等政务领域的自有数据及互联网公开数据，基于百度大数据多年积累的行业模型及实战经验，提供从数据整合治理到分析挖掘的一站式大数据解决方案，助力智慧政务新时代。<br /><br />
-            </p>
-            <p
-              class="scrollShow mt-3 break-all text-sm text-gray-400 lg:text-xl"
-              data-effect="slideLeft"
-            >
-              全渠道零售方案包括B2C、O2O、B2B的场景，提供APP/小程序，支持对接饿了么、美团等第三方外卖平台，基于阿里巴巴多年沉淀的业务中台技术，建立商品、会员、交易、营销等共享服务中心，实现全渠道数据的共享和一致，帮助零售商打造线上、线下无差别的全渠道销售能力。
-            </p>
-          </div>
-        </div>
-        <div class="relative lg:-mt-96 lg:flex lg:flex-col lg:items-end">
-          <div class="flex items-end justify-end *:p-1 lg:w-4/6 lg:*:p-4">
-            <div class="scrollShow w-3/12" data-effect="fadeIn">
-              <img class="lazyload w-full" src="./assets/Rectangle3-32.webp" data-size="auto"  data-srcset="./assets/Rectangle3-360.webp 360w, ./assets/Rectangle3-720.webp 720w, ./assets/Rectangle3-1080.webp 1080w, ./assets/Rectangle3-1512.webp 1512w, ./assets/Rectangle3-2048.webp 2048w" alt="" />
-            </div>
-            <div class="scrollShow w-3/5" data-effect="fadeIn">
-              <img class="lazyload w-full" src="./assets/Rectangle2-32.webp" data-size="auto" data-srcset="./assets/Rectangle2-360.webp 360w, ./assets/Rectangle2-720.webp 720w, ./assets/Rectangle2-1080.webp 1080w, ./assets/Rectangle2-1512.webp 1512w, ./assets/Rectangle2-2048.webp 2048w" alt="" />
-            </div>
-          </div>
-          <div class="flex items-start justify-end *:p-1 lg:w-9/12 lg:*:p-4">
-            <div class="scrollShow w-3/5" data-effect="fadeIn">
-              <img class="lazyload w-full" src="./assets/Rectangle1-32.webp" data-size="auto"  data-srcset="./assets/Rectangle1-360.webp 360w, ./assets/Rectangle1-720.webp 720w, ./assets/Rectangle1-1080.webp 1080w, ./assets/Rectangle1-1512.webp 1512w, ./assets/Rectangle1-2048.webp 2048w" alt="" />
-            </div>
-            <div class="scrollShow w-2/6" data-effect="fadeIn">
-              <img class="lazyload w-full" src="./assets/Rectangle4-32.webp" data-size="auto"  data-srcset="./assets/Rectangle4-360.webp 360w, ./assets/Rectangle4-720.webp 720w, ./assets/Rectangle4-1080.webp 1080w, ./assets/Rectangle4-1512.webp 1512w, ./assets/Rectangle4-2048.webp 2048w" alt="" />
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- 企业文化 -->
-      <section
-        class="relative hidden py-20 text-white lg:block"
-        style="background: url(./assets/Group27-1080.webp) center / auto 100vh no-repeat fixed"
+      </div>
+    </section>
+    <!-- banner -->
+    <section class="relative mx-auto lg:-mt-24" id="swiper">
+      <!-- banner图片 -->
+      <div
+        class="swiper-wrapper relative aspect-[7/5] lg:aspect-[12/5]"
+        id="banner"
       >
-        <!-- <img
+        <div class="swiper-slide relative h-full w-full text-white">
+          <img
+            class="lazyload absolute left-0 top-0 h-full w-full object-cover"
+            src="./assets/banner_home-32.webp"
+            data-sizes="auto"
+            data-srcset="./assets/banner_home-360.webp 360w, ./assets/banner_home-720.webp 720w, ./assets/banner_home-1080.webp 1080w, ./assets/banner_home-1512.webp 1512w, ./assets/banner_home-2048.webp 2048w"
+            alt="banner"
+          />
+          <div
+            class="absolute bottom-12 left-1/2 w-10/12 -translate-x-1/2 text-center lg:bottom-36 lg:w-8/12"
+          >
+            <div class="main-txt text-lg leading-10 lg:text-7xl">
+              开启互联网+ 从我们开始
+            </div>
+            <div class="sub-txt text-xs lg:mt-9 lg:text-3xl">
+              域名主机，网站建设，云服务器，企业邮箱一站式解决
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide relative h-full w-full text-white">
+          <img
+            class="lazyload absolute left-0 top-0 h-full w-full object-cover"
+            src="./assets/banner_about-32.webp"
+            data-sizes="auto"
+            data-srcset="./assets/banner_about-360.webp 360w, ./assets/banner_about-720.webp 720w, ./assets/banner_about-1080.webp 1080w, ./assets/banner_about-1512.webp 1512w, ./assets/banner_about-2048.webp 2048w"
+            alt="banner"
+          />
+          <div
+            class="absolute bottom-12 left-1/2 w-10/12 -translate-x-1/2 text-center lg:bottom-36 lg:w-8/12"
+          >
+            <div class="main-txt text-lg leading-10 lg:text-7xl">关于我们</div>
+            <div class="sub-txt text-xs lg:mt-9 lg:text-3xl">
+              企业构建互联网信息技术服务平台，领先技术变革，提升产业效率，致力于使能软件企业引领发展，服务制造企业转型升级，为政企客户提供“多快好省”的信息技术服务。
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide relative h-full w-full text-white">
+          <img
+            class="lazyload absolute left-0 top-0 h-full w-full object-cover"
+            src="./assets/banner_news-32.webp"
+            data-sizes="auto"
+            data-srcset="./assets/banner_news-360.webp 360w, ./assets/banner_news-720.webp 720w, ./assets/banner_news-1080.webp 1080w, ./assets/banner_news-1512.webp 1512w, ./assets/banner_news-2048.webp 2048w"
+            alt="banner"
+          />
+          <div
+            class="absolute bottom-12 left-1/2 w-10/12 -translate-x-1/2 text-center lg:bottom-36 lg:w-8/12"
+          >
+            <div class="main-txt text-lg leading-10 lg:text-7xl">新闻中心</div>
+            <div class="sub-txt text-xs lg:mt-9 lg:text-3xl">
+              几乎所有的伟大成就，都是团队集体协作追求远大目标的结果。这些团队的领导者挑选了团队的成员，并激励他们追求自己不敢想象的成就。
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 控制器 -->
+      <div
+        class="swiper-pagination absolute left-4 top-0 flex h-full flex-col items-center justify-center gap-3"
+        id="control"
+      ></div>
+    </section>
+    <!-- service scope -->
+    <section class="py-3 lg:py-10">
+      <!-- content -->
+      <div class="container mx-auto px-5 lg:flex lg:flex-col lg:items-start">
+        <!-- title -->
+        <div class="relative">
+          <div
+            class="text-stroke text-4xl text-transparent lg:-ml-12 lg:text-8xl"
+          >
+            Service scope
+          </div>
+          <div class="-mt-4 ml-3 text-4xl">服务范围</div>
+        </div>
+        <!-- 正文内容 -->
+        <div class="lg:mt-9 lg:w-5/12">
+          <p
+            class="scrollShow mt-3 break-all text-sm text-gray-400 lg:text-xl"
+            data-effect="slideLeft"
+          >
+            依托百度政务混合云，汇聚城市管理及公安等政务领域的自有数据及互联网公开数据，基于百度大数据多年积累的行业模型及实战经验，提供从数据整合治理到分析挖掘的一站式大数据解决方案，助力智慧政务新时代。<br /><br />
+          </p>
+          <p
+            class="scrollShow mt-3 break-all text-sm text-gray-400 lg:text-xl"
+            data-effect="slideLeft"
+          >
+            全渠道零售方案包括B2C、O2O、B2B的场景，提供APP/小程序，支持对接饿了么、美团等第三方外卖平台，基于阿里巴巴多年沉淀的业务中台技术，建立商品、会员、交易、营销等共享服务中心，实现全渠道数据的共享和一致，帮助零售商打造线上、线下无差别的全渠道销售能力。
+          </p>
+        </div>
+      </div>
+      <div class="relative lg:-mt-96 lg:flex lg:flex-col lg:items-end">
+        <div class="flex items-end justify-end *:p-1 lg:w-4/6 lg:*:p-4">
+          <div class="scrollShow w-3/12" data-effect="fadeIn">
+            <img
+              class="lazyload w-full"
+              src="./assets/Rectangle3-32.webp"
+              data-size="auto"
+              data-srcset="./assets/Rectangle3-360.webp 360w, ./assets/Rectangle3-720.webp 720w, ./assets/Rectangle3-1080.webp 1080w, ./assets/Rectangle3-1512.webp 1512w, ./assets/Rectangle3-2048.webp 2048w"
+              alt=""
+            />
+          </div>
+          <div class="scrollShow w-3/5" data-effect="fadeIn">
+            <img
+              class="lazyload w-full"
+              src="./assets/Rectangle2-32.webp"
+              data-size="auto"
+              data-srcset="./assets/Rectangle2-360.webp 360w, ./assets/Rectangle2-720.webp 720w, ./assets/Rectangle2-1080.webp 1080w, ./assets/Rectangle2-1512.webp 1512w, ./assets/Rectangle2-2048.webp 2048w"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="flex items-start justify-end *:p-1 lg:w-9/12 lg:*:p-4">
+          <div class="scrollShow w-3/5" data-effect="fadeIn">
+            <img
+              class="lazyload w-full"
+              src="./assets/Rectangle1-32.webp"
+              data-size="auto"
+              data-srcset="./assets/Rectangle1-360.webp 360w, ./assets/Rectangle1-720.webp 720w, ./assets/Rectangle1-1080.webp 1080w, ./assets/Rectangle1-1512.webp 1512w, ./assets/Rectangle1-2048.webp 2048w"
+              alt=""
+            />
+          </div>
+          <div class="scrollShow w-2/6" data-effect="fadeIn">
+            <img
+              class="lazyload w-full"
+              src="./assets/Rectangle4-32.webp"
+              data-size="auto"
+              data-srcset="./assets/Rectangle4-360.webp 360w, ./assets/Rectangle4-720.webp 720w, ./assets/Rectangle4-1080.webp 1080w, ./assets/Rectangle4-1512.webp 1512w, ./assets/Rectangle4-2048.webp 2048w"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 企业文化 -->
+    <section
+      class="relative hidden py-20 text-white lg:block"
+      style="
+        background: url(./assets/Group27-1080.webp) center / 100vw 100vh
+          no-repeat fixed;
+      "
+    >
+      <!-- <img
           class="lazyload absolute left-0 top-0 h-full w-full object-cover"
           src="./assets/Rectangle22-32.webp" data-sizes="auto" data-srcset="./assets/Rectangle22-360.webp 360w, ./assets/Rectangle22-720.webp 720w, ./assets/Rectangle22-1080.webp 1080w, ./assets/Rectangle22-1512.webp 1512w, ./assets/Rectangle22-2048.webp 2048w"
         />
         <div
           class="absolute left-0 top-0 h-full w-full bg-black opacity-70"
         ></div> -->
-        <div class="container relative mx-auto">
-          <div class="relative mx-auto text-center">
-            <div class="-mt-6 translate-x-0 text-4xl">企业文化</div>
-            <div class="mx-auto mt-3 h-1 w-16 bg-red-600"></div>
-          </div>
-          <div class="mt-8 text-xl leading-10 *:indent-10">
-            <p>
-              作为中国专业的企业文化咨询公司，我们在生存和发展的历程中，也形成了自己经营管理个性和文化，我们的运营和发展都基于对这些文化
-              涵盖的信念，信条和原则特之以恒、不折不扣地执行，所有公司的成员的所有行为均需与这些标准和原则保持高度统一。
-            </p>
-            <p>
-              我们相信，企业的战略可以改变，领号可以更换，甚至文化的表现也业与时俱进，总之一切都可以调整，唯一能保特并引领我们的，只有我
-              们的文化核心。只有信念的坚持才能带来企业的持续增长，只有统一的意志才能報炼出优秀的队伍，总之只有文化才能使我们长青。
-            </p>
-          </div>
-        </div>
-      </section>
-      <!-- team to introduce -->
-      <section>
-        <div class="container relative mx-auto text-center">
-          <div
-            class="text-stroke -translate-x-3 text-4xl text-transparent lg:text-9xl"
-          >
-            Team to introduce
-          </div>
-          <div
-            class="scrollShow -mt-6 translate-x-0 text-4xl"
-            data-effect="slideRight"
-          >
-            团队介绍
-          </div>
+      <div class="container relative mx-auto">
+        <div class="relative mx-auto text-center">
+          <div class="-mt-6 translate-x-0 text-4xl">企业文化</div>
           <div class="mx-auto mt-3 h-1 w-16 bg-red-600"></div>
         </div>
-        <div class="pt-5 lg:grid lg:grid-cols-3">
-          <div
-            class="scrollShow group/item relative aspect-[3/4] overflow-hidden"
-            data-effect="fadeIn"
-          >
-            <img
-              class="lazyload h-full w-full object-cover transition group-hover/item:scale-105"
-              src="./assets/team1-32.webp" data-sizes="auto" data-srcset="./assets/team1-360.webp 360w, ./assets/team1-720.webp 720w, ./assets/team1-1080.webp 1080w, ./assets/team1-1512.webp 1512w, ./assets/team1-2048.webp 2048w"
-              alt=""
-            />
-            <div
-              class="absolute bottom-10 left-1/2 -translate-x-1/2 text-center text-white lg:bottom-40"
-            >
-              <div class="lg:text-4xl">Jon Smith</div>
-              <div class="whitespace-nowrap lg:mt-6">
-                特级教师，从事教育工作10年
-              </div>
-              <a class="group/link block lg:mt-7" href="#">
-                <span
-                  class="mr-1 inline-block text-red-500 transition group-hover/link:translate-x-1"
-                >
-                  →
-                </span>
-                <span class="transition group-hover/link:opacity-90">
-                  More information
-                </span>
-              </a>
-            </div>
-          </div>
-          <div
-            class="scrollShow group/item relative aspect-[3/4] overflow-hidden"
-            data-effect="fadeIn"
-          >
-            <img
-              class="lazyload h-full w-full object-cover transition group-hover/item:scale-105"
-              src="./assets/team2-32.webp" data-sizes="auto" data-srcset="./assets/team2-360.webp 360w, ./assets/team2-720.webp 720w, ./assets/team2-1080.webp 1080w, ./assets/team2-1512.webp 1512w, ./assets/team2-2048.webp 2048w"
-              alt=""
-            />
-            <div
-              class="absolute bottom-10 left-1/2 -translate-x-1/2 text-center text-white lg:bottom-40"
-            >
-              <div class="lg:text-4xl">Merri Bond</div>
-              <div class="whitespace-nowrap lg:mt-6">
-                特级教师，从事教育工作10年
-              </div>
-              <a class="group/link block lg:mt-7" href="#">
-                <span
-                  class="mr-1 inline-block text-red-500 transition group-hover/link:translate-x-1"
-                >
-                  →
-                </span>
-                <span class="transition group-hover/link:opacity-90">
-                  More information
-                </span>
-              </a>
-            </div>
-          </div>
-          <div
-            class="scrollShow group/item relative aspect-[3/4] overflow-hidden"
-            data-effect="fadeIn"
-          >
-            <img
-              class="lazyload h-full w-full object-cover transition group-hover/item:scale-105"
-              src="./assets/team3-32.webp" data-sizes="auto" data-srcset="./assets/team3-360.webp 360w, ./assets/team3-720.webp 720w, ./assets/team3-1080.webp 1080w, ./assets/team3-1512.webp 1512w, ./assets/team3-2048.webp 2048w"
-              alt=""
-            />
-            <div
-              class="absolute bottom-10 left-1/2 -translate-x-1/2 text-center text-white lg:bottom-40"
-            >
-              <div class="lg:text-4xl">Samuel Fredman</div>
-              <div class="whitespace-nowrap lg:mt-6">
-                特级教师，从事教育工作10年
-              </div>
-              <a class="group/link block lg:mt-7" href="#">
-                <span
-                  class="mr-1 inline-block text-red-500 transition group-hover/link:translate-x-1"
-                >
-                  →
-                </span>
-                <span class="transition group-hover/link:opacity-90">
-                  More information
-                </span>
-              </a>
-            </div>
-          </div>
+        <div class="mt-8 text-xl leading-10 *:indent-10">
+          <p>
+            作为中国专业的企业文化咨询公司，我们在生存和发展的历程中，也形成了自己经营管理个性和文化，我们的运营和发展都基于对这些文化
+            涵盖的信念，信条和原则特之以恒、不折不扣地执行，所有公司的成员的所有行为均需与这些标准和原则保持高度统一。
+          </p>
+          <p>
+            我们相信，企业的战略可以改变，领号可以更换，甚至文化的表现也业与时俱进，总之一切都可以调整，唯一能保特并引领我们的，只有我
+            们的文化核心。只有信念的坚持才能带来企业的持续增长，只有统一的意志才能報炼出优秀的队伍，总之只有文化才能使我们长青。
+          </p>
         </div>
-      </section>
-      <!-- 新闻动态 -->
-      <section class="bg-slate-800 pb-5 lg:pt-10">
-        <div class="container relative mx-auto py-5 text-center">
-          <div
-            class="text-stroke-dark -translate-x-3 text-4xl text-transparent lg:text-8xl"
-          >
-            News and trends
-          </div>
-          <div
-            class="scrollShow -mt-6 translate-x-0 text-4xl text-white"
-            data-effect="slideRight"
-          >
-            新闻动态
-          </div>
-          <div class="mx-auto mt-3 h-1 w-16 bg-red-600"></div>
-        </div>
-        <div class="container mx-auto px-5 text-white">
-          <div
-            id="newsList"
-            class="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 lg:gap-16"
-          >
-            <!-- <a class="block">
-              <img
-                class="aspect-[2/3] w-full object-cover"
-                src="https://picsum.photos/id/237/200/300"
-                alt=""
-              />
-              <h6 class="py-4 text-base lg:text-xl">
-                2022百度Al大会前夕，解读百度大脑的 半年”豹变"
-              </h6>
-              <p class="pb-6 text-sm leading-6">
-                Facebook为未来的VR社交打造了一款逼真的虚拟头像
-                系统，该系统的特点是，利用数百颗摄像头对人脸进行
-                动作捕捉，并能生成与人脸相似度很高的虚拟头像，这
-                些头像还能模仿人脸的大量表情。
-              </p>
-            </a> -->
-          </div>
-        </div>
-      </section>
-      <!-- 页脚 -->
-      <section class="bg-red-500">
+      </div>
+    </section>
+    <!-- team to introduce -->
+    <section>
+      <div class="container relative mx-auto text-center">
         <div
-          class="container mx-auto p-6 text-xs text-white lg:py-12 lg:text-base"
+          class="text-stroke -translate-x-3 text-4xl text-transparent lg:text-9xl"
         >
-          <ul class="leading-6 lg:flex lg:justify-around lg:px-12">
-            <li>地址：中国山东省青岛市南区某某20号</li>
-            <li>邮箱：1223xxx@qq.com</li>
-            <li>电话：0591-888988998</li>
-          </ul>
-          <div class="mt-4 flex items-center gap-2 lg:mt-12 lg:justify-center">
-            <img
-              class="lazyload aspect-square w-10 lg:w-12"
-              src="./assets/qrcode-32.webp" data-sizes="auto" data-srcset="./assets/qrcode-360.webp 360w, ./assets/qrcode-720.webp 720w, ./assets/qrcode-1080.webp 1080w, ./assets/qrcode-1512.webp 1512w, ./assets/qrcode-2048.webp 2048w"
-              alt=""
-            />
-            <div class="leading-4 lg:flex lg:gap-4">
-              <p>Copyright & 2009 - 2022 Cld, All Rights Reserved</p>
-              <p>某菜网络科技有限公司 版权所有 陕ICP备xxxx×xxx号</p>
+          Team to introduce
+        </div>
+        <div
+          class="scrollShow -mt-6 translate-x-0 text-4xl"
+          data-effect="slideRight"
+        >
+          团队介绍
+        </div>
+        <div class="mx-auto mt-3 h-1 w-16 bg-red-600"></div>
+      </div>
+      <div class="pt-5 lg:grid lg:grid-cols-3">
+        <div
+          class="scrollShow group/item relative aspect-[3/4] overflow-hidden"
+          data-effect="fadeIn"
+        >
+          <img
+            class="lazyload h-full w-full object-cover transition group-hover/item:scale-105"
+            src="./assets/team1-32.webp"
+            data-sizes="auto"
+            data-srcset="./assets/team1-360.webp 360w, ./assets/team1-720.webp 720w, ./assets/team1-1080.webp 1080w, ./assets/team1-1512.webp 1512w, ./assets/team1-2048.webp 2048w"
+            alt=""
+          />
+          <div
+            class="absolute bottom-10 left-1/2 -translate-x-1/2 text-center text-white lg:bottom-40"
+          >
+            <div class="lg:text-4xl">Jon Smith</div>
+            <div class="whitespace-nowrap lg:mt-6">
+              特级教师，从事教育工作10年
             </div>
+            <a class="group/link block lg:mt-7" href="#">
+              <span
+                class="mr-1 inline-block text-red-500 transition group-hover/link:translate-x-1"
+              >
+                →
+              </span>
+              <span class="transition group-hover/link:opacity-90">
+                More information
+              </span>
+            </a>
           </div>
         </div>
-      </section>
-    </div>
+        <div
+          class="scrollShow group/item relative aspect-[3/4] overflow-hidden"
+          data-effect="fadeIn"
+        >
+          <img
+            class="lazyload h-full w-full object-cover transition group-hover/item:scale-105"
+            src="./assets/team2-32.webp"
+            data-sizes="auto"
+            data-srcset="./assets/team2-360.webp 360w, ./assets/team2-720.webp 720w, ./assets/team2-1080.webp 1080w, ./assets/team2-1512.webp 1512w, ./assets/team2-2048.webp 2048w"
+            alt=""
+          />
+          <div
+            class="absolute bottom-10 left-1/2 -translate-x-1/2 text-center text-white lg:bottom-40"
+          >
+            <div class="lg:text-4xl">Merri Bond</div>
+            <div class="whitespace-nowrap lg:mt-6">
+              特级教师，从事教育工作10年
+            </div>
+            <a class="group/link block lg:mt-7" href="#">
+              <span
+                class="mr-1 inline-block text-red-500 transition group-hover/link:translate-x-1"
+              >
+                →
+              </span>
+              <span class="transition group-hover/link:opacity-90">
+                More information
+              </span>
+            </a>
+          </div>
+        </div>
+        <div
+          class="scrollShow group/item relative aspect-[3/4] overflow-hidden"
+          data-effect="fadeIn"
+        >
+          <img
+            class="lazyload h-full w-full object-cover transition group-hover/item:scale-105"
+            src="./assets/team3-32.webp"
+            data-sizes="auto"
+            data-srcset="./assets/team3-360.webp 360w, ./assets/team3-720.webp 720w, ./assets/team3-1080.webp 1080w, ./assets/team3-1512.webp 1512w, ./assets/team3-2048.webp 2048w"
+            alt=""
+          />
+          <div
+            class="absolute bottom-10 left-1/2 -translate-x-1/2 text-center text-white lg:bottom-40"
+          >
+            <div class="lg:text-4xl">Samuel Fredman</div>
+            <div class="whitespace-nowrap lg:mt-6">
+              特级教师，从事教育工作10年
+            </div>
+            <a class="group/link block lg:mt-7" href="#">
+              <span
+                class="mr-1 inline-block text-red-500 transition group-hover/link:translate-x-1"
+              >
+                →
+              </span>
+              <span class="transition group-hover/link:opacity-90">
+                More information
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 新闻动态 -->
+    <section class="bg-slate-800 pb-5 lg:pt-10">
+      <div class="container relative mx-auto overflow-hidden py-5 text-center">
+        <div
+          class="text-stroke-dark -translate-x-3 text-4xl text-transparent lg:text-8xl"
+        >
+          News and trends
+        </div>
+        <div
+          class="scrollShow -mt-6 translate-x-0 text-4xl text-white"
+          data-effect="slideRight"
+        >
+          新闻动态
+        </div>
+        <div class="mx-auto mt-3 h-1 w-16 bg-red-600"></div>
+      </div>
+      <div class="container mx-auto px-5 text-white">
+        <div
+          id="newsList"
+          class="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 lg:gap-16"
+        >
+          <!-- js动态注入 -->
+        </div>
+      </div>
+    </section>
+    <!-- 页脚 -->
+    <section class="bg-red-500">
+      <div
+        class="container mx-auto p-6 text-xs text-white lg:py-12 lg:text-base"
+      >
+        <ul class="leading-6 lg:flex lg:justify-around lg:px-12">
+          <li>地址：中国山东省青岛市南区某某20号</li>
+          <li>邮箱：1223xxx@qq.com</li>
+          <li>电话：0591-888988998</li>
+        </ul>
+        <div class="mt-4 flex items-center gap-2 lg:mt-12 lg:justify-center">
+          <img
+            class="lazyload aspect-square w-10 lg:w-12"
+            src="./assets/qrcode-32.webp"
+            data-sizes="auto"
+            data-srcset="./assets/qrcode-360.webp 360w, ./assets/qrcode-720.webp 720w, ./assets/qrcode-1080.webp 1080w, ./assets/qrcode-1512.webp 1512w, ./assets/qrcode-2048.webp 2048w"
+            alt=""
+          />
+          <div class="leading-4 lg:flex lg:gap-4">
+            <p>Copyright & 2009 - 2022 Cld, All Rights Reserved</p>
+            <p>某菜网络科技有限公司 版权所有 陕ICP备xxxx×xxx号</p>
+          </div>
+        </div>
+      </div>
+    </section>
     <script src="./js/axios.min.js"></script>
     <script src="./js/swiper.js"></script>
     <script src="./js/scrollshow.js"></script>
