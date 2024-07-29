@@ -3,7 +3,7 @@ class Pagination {
     this.template = `
         <div
             data-role="pagination"
-            class="flex items-center justify-center gap-5 text-gray-500 text-xs"
+            class="flex items-center justify-center gap-2 lg:gap-5 text-gray-500 text-xs"
         >
             <select data-role="pageSize" class="h-6 lg:h-8 border">
                 <option value="10">10条/页</option>
@@ -20,7 +20,7 @@ class Pagination {
                 &gt;
             </button>
             </div>
-            <div>
+            <div class="text-nowrap">
             前往
             <input
                 data-role="pageInput"
